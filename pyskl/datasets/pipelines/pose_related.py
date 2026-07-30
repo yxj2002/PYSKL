@@ -1,4 +1,5 @@
 # Copyright (c) OpenMMLab. All rights reserved.
+import hashlib
 import numpy as np
 from scipy.stats import mode as get_mode
 
@@ -200,6 +201,254 @@ class RandomGaussianNoise:
         random_vec = (random_vec.T).reshape(M, T, V, C)
         results['keypoint'] = skeleton.reshape(M, T, V, C) + random_vec
         return results
+
+
+@PIPELINES.register_module()
+class RandomSkeletonDegrade:
+    """Simulate low-quality skeletons for robustness evaluation.
+
+    Supported degradation types are random joint missing, body-part occlusion,
+    coordinate noise, continuous frame missing and their mixture. The transform
+    expects ``results['keypoint']`` in ``M x T x V x C`` format and should be
+    placed after ``PoseDecode`` and before ``FormatGCNInput``.
+    """
+
+    _SEVERITY_PRESETS = {
+        'mild': dict(
+            joint_missing_ratio=0.1,
+            num_occluded_parts=1,
+            coord_noise_sigma=0.02,
+            frame_missing_ratio=0.1),
+        'moderate': dict(
+            joint_missing_ratio=0.3,
+            num_occluded_parts=2,
+            coord_noise_sigma=0.05,
+            frame_missing_ratio=0.25),
+        'severe': dict(
+            joint_missing_ratio=0.5,
+            num_occluded_parts=3,
+            coord_noise_sigma=0.1,
+            frame_missing_ratio=0.4),
+    }
+
+    _PARTS = {
+        'nturgb+d': {
+            'torso': [0, 1, 2, 3, 20],
+            'left_arm': [4, 5, 6, 7, 21, 22],
+            'right_arm': [8, 9, 10, 11, 23, 24],
+            'left_leg': [12, 13, 14, 15],
+            'right_leg': [16, 17, 18, 19],
+        },
+        'openpose': {
+            'torso': [1, 2, 5, 8, 11],
+            'left_arm': [5, 6, 7],
+            'right_arm': [2, 3, 4],
+            'left_leg': [11, 12, 13],
+            'right_leg': [8, 9, 10],
+            'head': [0, 14, 15, 16, 17],
+        },
+        'coco': {
+            'head': [0, 1, 2, 3, 4],
+            'left_arm': [5, 7, 9],
+            'right_arm': [6, 8, 10],
+            'left_leg': [11, 13, 15],
+            'right_leg': [12, 14, 16],
+            'torso': [5, 6, 11, 12],
+        },
+    }
+
+    def __init__(self,
+                 degrade_type='mixed',
+                 severity='moderate',
+                 prob=1.0,
+                 dataset='nturgb+d',
+                 coord_dims=None,
+                 joint_missing_ratio=None,
+                 num_occluded_parts=None,
+                 occluded_parts=None,
+                 coord_noise_sigma=None,
+                 frame_missing_ratio=None,
+                 mixed_degrade_types=None,
+                 mixed_apply_prob=0.5,
+                 seed=None,
+                 return_mask=False):
+        assert degrade_type in [
+            'joint_missing', 'limb_occlusion', 'coord_noise',
+            'frame_missing', 'mixed'
+        ]
+        assert severity in self._SEVERITY_PRESETS
+        assert 0 <= prob <= 1
+        assert 0 <= mixed_apply_prob <= 1
+        self.degrade_type = degrade_type
+        self.severity = severity
+        self.prob = prob
+        self.dataset = dataset
+        self.coord_dims = coord_dims
+        self.occluded_parts = occluded_parts
+        self.mixed_degrade_types = mixed_degrade_types or [
+            'joint_missing', 'limb_occlusion', 'coord_noise', 'frame_missing'
+        ]
+        self.mixed_apply_prob = mixed_apply_prob
+        self.seed = seed
+        self.return_mask = return_mask
+
+        preset = self._SEVERITY_PRESETS[severity]
+        self.joint_missing_ratio = self._get_value(
+            joint_missing_ratio, preset['joint_missing_ratio'])
+        self.num_occluded_parts = self._get_value(
+            num_occluded_parts, preset['num_occluded_parts'])
+        self.coord_noise_sigma = self._get_value(
+            coord_noise_sigma, preset['coord_noise_sigma'])
+        self.frame_missing_ratio = self._get_value(
+            frame_missing_ratio, preset['frame_missing_ratio'])
+
+    @staticmethod
+    def _get_value(value, default):
+        return default if value is None else value
+
+    def _rng(self, results):
+        if self.seed is None:
+            return np.random
+        key = results.get('frame_dir', results.get('filename', ''))
+        label = results.get('label', '')
+        frame_inds = results.get('frame_inds', [])
+        content = f'{key}_{label}_{np.asarray(frame_inds).sum()}'
+        digest = hashlib.md5(content.encode('utf-8')).hexdigest()
+        offset = int(digest[:8], 16)
+        return np.random.RandomState((self.seed + offset) % (2**32 - 1))
+
+    def _coord_dims(self, results, keypoint):
+        if self.coord_dims is not None:
+            assert 0 < self.coord_dims <= keypoint.shape[-1]
+            return self.coord_dims
+        if 'keypoint_score' in results:
+            return keypoint.shape[-1]
+        if self.dataset in ['openpose', 'coco', 'handmp'] and keypoint.shape[-1] == 3:
+            return 2
+        return keypoint.shape[-1]
+
+    @staticmethod
+    def _valid_mask(keypoint, coord_dims):
+        return np.abs(keypoint[..., :coord_dims]).sum(axis=-1) > 1e-6
+
+    @staticmethod
+    def _zero_keypoints(keypoint, mask, coord_dims):
+        keypoint[..., :coord_dims][mask] = 0
+        if keypoint.shape[-1] > coord_dims:
+            keypoint[..., coord_dims:][mask] = 0
+
+    def _zero_scores(self, results, mask):
+        if 'keypoint_score' in results:
+            results['keypoint_score'][mask] = 0
+
+    def _joint_missing(self, results, rng, coord_dims):
+        keypoint = results['keypoint']
+        M, T, V, _ = keypoint.shape
+        mask = rng.rand(M, T, V) < self.joint_missing_ratio
+        self._zero_keypoints(keypoint, mask, coord_dims)
+        self._zero_scores(results, mask)
+        return mask
+
+    def _limb_occlusion(self, results, rng, coord_dims):
+        keypoint = results['keypoint']
+        M, T, V, _ = keypoint.shape
+        parts = self._PARTS.get(self.dataset, self._PARTS['nturgb+d'])
+        if self.occluded_parts is None:
+            part_names = list(parts.keys())
+            num_parts = min(self.num_occluded_parts, len(part_names))
+            chosen = rng.choice(part_names, size=num_parts, replace=False)
+        else:
+            chosen = self.occluded_parts
+            if isinstance(chosen, str):
+                chosen = [chosen]
+
+        mask = np.zeros((M, T, V), dtype=bool)
+        for part in chosen:
+            if part not in parts:
+                raise KeyError(f'Unknown body part {part} for {self.dataset}')
+            valid_joints = [idx for idx in parts[part] if idx < V]
+            mask[:, :, valid_joints] = True
+        self._zero_keypoints(keypoint, mask, coord_dims)
+        self._zero_scores(results, mask)
+        return mask
+
+    def _coord_noise(self, results, rng, coord_dims):
+        keypoint = results['keypoint']
+        valid = self._valid_mask(keypoint, coord_dims)
+        coords = keypoint[..., :coord_dims]
+        if not np.any(valid):
+            return np.zeros(valid.shape, dtype=bool)
+
+        valid_coords = coords[valid]
+        coord_range = valid_coords.max(axis=0) - valid_coords.min(axis=0)
+        scale = max(float(np.linalg.norm(coord_range)), 1e-6)
+        noise = rng.randn(*coords.shape) * self.coord_noise_sigma * scale
+        coords += noise * valid[..., None]
+        keypoint[..., :coord_dims] = coords
+        return valid
+
+    def _frame_missing(self, results, rng, coord_dims):
+        keypoint = results['keypoint']
+        M, T, V, _ = keypoint.shape
+        missing_len = int(round(T * self.frame_missing_ratio))
+        if missing_len <= 0:
+            return np.zeros((M, T, V), dtype=bool)
+        missing_len = min(missing_len, T)
+        start = rng.randint(0, T - missing_len + 1)
+        mask = np.zeros((M, T, V), dtype=bool)
+        mask[:, start:start + missing_len, :] = True
+        self._zero_keypoints(keypoint, mask, coord_dims)
+        self._zero_scores(results, mask)
+        return mask
+
+    def _apply_one(self, degrade_type, results, rng, coord_dims):
+        funcs = {
+            'joint_missing': self._joint_missing,
+            'limb_occlusion': self._limb_occlusion,
+            'coord_noise': self._coord_noise,
+            'frame_missing': self._frame_missing,
+        }
+        return funcs[degrade_type](results, rng, coord_dims)
+
+    def __call__(self, results):
+        if 'keypoint' not in results:
+            return results
+        rng = self._rng(results)
+        if rng.rand() >= self.prob:
+            return results
+
+        results['keypoint'] = results['keypoint'].copy()
+        if 'keypoint_score' in results:
+            results['keypoint_score'] = results['keypoint_score'].copy()
+        coord_dims = self._coord_dims(results, results['keypoint'])
+
+        degrade_mask = np.zeros(results['keypoint'].shape[:-1], dtype=bool)
+        if self.degrade_type == 'mixed':
+            applied = []
+            for item in self.mixed_degrade_types:
+                if rng.rand() < self.mixed_apply_prob:
+                    applied.append(item)
+            if not applied:
+                applied = [rng.choice(self.mixed_degrade_types)]
+            for item in applied:
+                degrade_mask |= self._apply_one(item, results, rng, coord_dims)
+            results['degrade_types'] = applied
+        else:
+            degrade_mask = self._apply_one(
+                self.degrade_type, results, rng, coord_dims)
+            results['degrade_types'] = [self.degrade_type]
+
+        results['degrade_severity'] = self.severity
+        if self.return_mask:
+            results['degrade_mask'] = degrade_mask
+        return results
+
+    def __repr__(self):
+        repr_str = (
+            f'{self.__class__.__name__}('
+            f'degrade_type={self.degrade_type}, '
+            f'severity={self.severity}, prob={self.prob})')
+        return repr_str
 
 
 @PIPELINES.register_module()
