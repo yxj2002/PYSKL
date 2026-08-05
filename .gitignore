@@ -130,3 +130,16 @@ examples/extract_diving48_skeleton/*pkl
 configs/gen_config.ipynb
 dev.ipynb
 test.ipynb
+
+# Training artifacts: keep lightweight experiment records, not model weights.
+# Applies to every model/dataset/modality directory under work_dirs/.
+work_dirs/**/*.pth
+work_dirs/**/*.pt
+work_dirs/**/*.ckpt
+work_dirs/**/*.tar
+!work_dirs/**/*.py
+!work_dirs/**/*.log
+!work_dirs/**/*.log.json
+!work_dirs/**/result*.pkl
+!work_dirs/**/metrics*.json
+!work_dirs/**/README.md
