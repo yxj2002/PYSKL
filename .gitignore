@@ -105,8 +105,13 @@ venv.bak/
 *.pkl.json
 *.log.json
 benchlist.txt
-work_dirs/
 .cache/
+
+work_dirs/*
+!work_dirs/*/*.log.json
+!work_dirs/*/*.py
+!work_dirs/*/best_*.pth
+!work_dirs/*/*results.txt
 
 # Profile
 *.prof
