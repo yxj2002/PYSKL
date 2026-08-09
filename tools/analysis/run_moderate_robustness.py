@@ -121,6 +121,9 @@ def _build_runs(args, checkpoints):
             log = os.path.join(output_dir, 'test.log')
             command = [
                 sys.executable,
+                '-m', 'torch.distributed.run',
+                '--standalone',
+                '--nproc_per_node=1',
                 os.path.join('tools', 'test.py'),
                 config,
                 '-C', checkpoints[model],
