@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Run the frozen 18-condition NTU60 xsub 3D Joint pilot matrix."""
+"""Run selected NTU60 xsub 3D Joint robustness conditions."""
 
 import argparse
 import json
@@ -11,13 +11,13 @@ import time
 
 MODELS = ('stgcn', 'stgcnpp', 'ctrgcn')
 ANN_FILE = os.path.join('data', 'nturgbd', 'ntu60_3danno.pkl')
-CONDITIONS = (
-    'clean',
-    'joint_missing_moderate',
-    'limb_occlusion_moderate',
-    'coord_noise_moderate',
-    'frame_missing_moderate',
-    'mixed_moderate')
+DEGRADE_TYPES = (
+    'joint_missing',
+    'limb_occlusion',
+    'coord_noise',
+    'frame_missing',
+    'mixed')
+SEVERITIES = ('mild', 'moderate', 'severe')
 
 
 def parse_args():
@@ -27,6 +27,12 @@ def parse_args():
     parser.add_argument('--ctrgcn-checkpoint', required=True)
     parser.add_argument(
         '--output-root', default='work_dirs/robustness_benchmark')
+    parser.add_argument(
+        '--severities', nargs='+', choices=SEVERITIES, default=['moderate'],
+        help='Degradation severities to run. Default: moderate.')
+    parser.add_argument(
+        '--skip-clean', action='store_true',
+        help='Do not repeat the Clean condition for each model.')
     parser.add_argument(
         '--dry-run', action='store_true',
         help='Validate files and print commands without launching inference.')
@@ -64,13 +70,6 @@ def _validate_configs(runs):
         'stgcnpp': 'STGCN',
         'ctrgcn': 'CTRGCN',
     }
-    expected_degrade = {
-        'joint_missing_moderate': 'joint_missing',
-        'limb_occlusion_moderate': 'limb_occlusion',
-        'coord_noise_moderate': 'coord_noise',
-        'frame_missing_moderate': 'frame_missing',
-        'mixed_moderate': 'mixed',
-    }
     clean_types = [
         'PreNormalize3D', 'GenSkeFeat', 'UniformSample', 'PoseDecode',
         'FormatGCNInput', 'Collect', 'ToTensor']
@@ -98,11 +97,12 @@ def _validate_configs(runs):
         assert feature['dataset'] == 'nturgb+d'
         assert feature['feats'] == ['j']
         if run['condition'] != 'clean':
+            degrade_type, severity = run['condition'].rsplit('_', 1)
             degrade = next(
                 item for item in pipeline
                 if item['type'] == 'RandomSkeletonDegrade')
-            assert degrade['degrade_type'] == expected_degrade[run['condition']]
-            assert degrade['severity'] == 'moderate'
+            assert degrade['degrade_type'] == degrade_type
+            assert degrade['severity'] == severity
             assert degrade['dataset'] == 'nturgb+d'
             assert degrade['prob'] == 1.0
             assert degrade['seed'] == 255
@@ -113,9 +113,19 @@ def _build_runs(args, checkpoints):
         'configs', 'robust_skeleton', 'ntu60_xsub_3dkp')
     runs = []
     for model in MODELS:
-        for condition in CONDITIONS:
-            config = os.path.join(
-                config_root, '{}_{}.py'.format(model, condition))
+        conditions = [] if args.skip_clean else ['clean']
+        conditions += [
+            '{}_{}'.format(degrade_type, severity)
+            for severity in args.severities
+            for degrade_type in DEGRADE_TYPES]
+        for condition in conditions:
+            if condition == 'clean':
+                config = os.path.join(config_root, model, 'clean.py')
+            else:
+                degrade_type, severity = condition.rsplit('_', 1)
+                config = os.path.join(
+                    config_root, model, severity,
+                    '{}.py'.format(degrade_type))
             output_dir = os.path.join(args.output_root, model, condition)
             output = os.path.join(output_dir, 'result.pkl')
             log = os.path.join(output_dir, 'test.log')
@@ -148,7 +158,10 @@ def main():
         'ctrgcn': args.ctrgcn_checkpoint,
     }
     runs = _build_runs(args, checkpoints)
-    assert len(runs) == 18
+    expected_runs = len(MODELS) * (
+        (0 if args.skip_clean else 1) +
+        len(DEGRADE_TYPES) * len(args.severities))
+    assert len(runs) == expected_runs
     _preflight(checkpoints, runs)
     _validate_configs(runs)
 
@@ -163,14 +176,16 @@ def main():
         return
 
     os.makedirs(args.output_root, exist_ok=True)
-    manifest_path = os.path.join(args.output_root, 'moderate_manifest.json')
+    manifest_name = '{}_manifest.json'.format('_'.join(args.severities))
+    manifest_path = os.path.join(args.output_root, manifest_name)
     with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=True)
 
     for index, run in enumerate(runs, 1):
         output_dir = os.path.dirname(run['output'])
         os.makedirs(output_dir, exist_ok=True)
-        print('[{}/18] {} {}'.format(index, run['model'], run['condition']))
+        print('[{}/{}] {} {}'.format(
+            index, len(runs), run['model'], run['condition']))
         start = time.time()
         with open(run['log'], 'w', encoding='utf-8') as log_file:
             completed = subprocess.run(
@@ -190,7 +205,8 @@ def main():
     manifest['status'] = 'completed'
     with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=True)
-    print('PASS: completed all 18 runs; manifest: {}'.format(manifest_path))
+    print('PASS: completed all {} runs; manifest: {}'.format(
+        len(runs), manifest_path))
 
 
 if __name__ == '__main__':
