@@ -1,0 +1,3628 @@
+{
+  "status": "passed",
+  "source": "synthetic",
+  "split": "xsub_val",
+  "seed": 255,
+  "num_samples": 25,
+  "pipeline_order": [
+    "PreNormalize3D",
+    "RandomSkeletonDegrade",
+    "GenSkeFeat",
+    "UniformSample(num_clips=10)",
+    "PoseDecode",
+    "FormatGCNInput"
+  ],
+  "part_definitions": {
+    "torso": [
+      0,
+      1,
+      2,
+      3,
+      20
+    ],
+    "left_arm": [
+      4,
+      5,
+      6,
+      7,
+      21,
+      22
+    ],
+    "right_arm": [
+      8,
+      9,
+      10,
+      11,
+      23,
+      24
+    ],
+    "left_leg": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "right_leg": [
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "summary": {
+    "joint_missing_mild": {
+      "mean_effective_missing_ratio": 0.09992539726965
+    },
+    "coord_noise_mild": {
+      "mean_normalized_noise_rms": 0.019976131424504974
+    },
+    "frame_missing_mild": {
+      "mean_nominal_missing_ratio": 0.10007795831551862
+    },
+    "joint_missing_moderate": {
+      "mean_effective_missing_ratio": 0.29936367031839306
+    },
+    "coord_noise_moderate": {
+      "mean_normalized_noise_rms": 0.049940328561262445
+    },
+    "frame_missing_moderate": {
+      "mean_nominal_missing_ratio": 0.2501842945944061
+    },
+    "joint_missing_severe": {
+      "mean_effective_missing_ratio": 0.49995458804604853
+    },
+    "coord_noise_severe": {
+      "mean_normalized_noise_rms": 0.09988065712252489
+    },
+    "frame_missing_severe": {
+      "mean_nominal_missing_ratio": 0.39989004515247634
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "synthetic_000",
+      "label": 0,
+      "num_person": 2,
+      "num_frames": 48,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09766277128547579,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.3080133555926544,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.496661101836394,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_leg"
+          ],
+          "joint_indices": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_leg",
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_leg",
+            "right_arm",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            20,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.8113084909004447,
+          "normalized_noise_rms": 0.019900221817757937,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.8113084909004447,
+          "normalized_noise_rms": 0.049750554544394844,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.8113084909004447,
+          "normalized_noise_rms": 0.09950110908878969,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            12,
+            17
+          ],
+          "nominal_missing_ratio": 0.10416666666666667,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            12,
+            24
+          ],
+          "nominal_missing_ratio": 0.25,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            12,
+            31
+          ],
+          "nominal_missing_ratio": 0.3958333333333333,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          12,
+          24
+        ],
+        "sampled_missing_ratio": 0.249,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_001",
+      "label": 1,
+      "num_person": 2,
+      "num_frames": 51,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10282574568288853,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.29631083202511777,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.49960753532182106,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_leg"
+          ],
+          "joint_indices": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_leg",
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            19,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_leg",
+            "right_arm",
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            19,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.0700405973147658,
+          "normalized_noise_rms": 0.020146923411309112,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.0700405973147658,
+          "normalized_noise_rms": 0.050367308528272786,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.0700405973147658,
+          "normalized_noise_rms": 0.10073461705654557,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            19,
+            24
+          ],
+          "nominal_missing_ratio": 0.09803921568627451,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            19,
+            32
+          ],
+          "nominal_missing_ratio": 0.2549019607843137,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            27,
+            47
+          ],
+          "nominal_missing_ratio": 0.39215686274509803,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          19,
+          32
+        ],
+        "sampled_missing_ratio": 0.255,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_002",
+      "label": 2,
+      "num_person": 2,
+      "num_frames": 54,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10182896688087,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2975778546712803,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.513593672763223,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_arm",
+            "right_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_arm",
+            "right_arm",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.044988178078621,
+          "normalized_noise_rms": 0.0198400934787148,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.044988178078621,
+          "normalized_noise_rms": 0.049600233696787004,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.044988178078621,
+          "normalized_noise_rms": 0.099200467393574,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            4,
+            9
+          ],
+          "nominal_missing_ratio": 0.09259259259259259,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            4,
+            18
+          ],
+          "nominal_missing_ratio": 0.25925925925925924,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            4,
+            26
+          ],
+          "nominal_missing_ratio": 0.4074074074074074,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          4,
+          18
+        ],
+        "sampled_missing_ratio": 0.26,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_003",
+      "label": 3,
+      "num_person": 2,
+      "num_frames": 57,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09978917779339423,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.3120168657765285,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5151089248067463,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            20
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "torso",
+            "left_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "torso",
+            "left_arm",
+            "left_leg"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.7227846912403244,
+          "normalized_noise_rms": 0.019882843879229103,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.7227846912403244,
+          "normalized_noise_rms": 0.04970710969807276,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.7227846912403244,
+          "normalized_noise_rms": 0.09941421939614552,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            28,
+            34
+          ],
+          "nominal_missing_ratio": 0.10526315789473684,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            28,
+            42
+          ],
+          "nominal_missing_ratio": 0.24561403508771928,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            28,
+            51
+          ],
+          "nominal_missing_ratio": 0.40350877192982454,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          28,
+          42
+        ],
+        "sampled_missing_ratio": 0.247,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_004",
+      "label": 4,
+      "num_person": 2,
+      "num_frames": 60,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10364768683274021,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2900355871886121,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5102313167259787,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_leg"
+          ],
+          "joint_indices": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_leg",
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_leg",
+            "left_arm",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.085690860999725,
+          "normalized_noise_rms": 0.019820204572102956,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.085690860999725,
+          "normalized_noise_rms": 0.04955051143025739,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.085690860999725,
+          "normalized_noise_rms": 0.09910102286051478,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            34,
+            40
+          ],
+          "nominal_missing_ratio": 0.1,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            34,
+            49
+          ],
+          "nominal_missing_ratio": 0.25,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            34,
+            58
+          ],
+          "nominal_missing_ratio": 0.4,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          34,
+          49
+        ],
+        "sampled_missing_ratio": 0.249,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_005",
+      "label": 5,
+      "num_person": 2,
+      "num_frames": 63,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10069885641677255,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.3017789072426938,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.4952350698856417,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_arm",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_arm",
+            "torso",
+            "left_leg"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.142890082527645,
+          "normalized_noise_rms": 0.019938205847942723,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.142890082527645,
+          "normalized_noise_rms": 0.0498455146198568,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.142890082527645,
+          "normalized_noise_rms": 0.0996910292397136,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            45,
+            51
+          ],
+          "nominal_missing_ratio": 0.09523809523809523,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            45,
+            61
+          ],
+          "nominal_missing_ratio": 0.25396825396825395,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            10,
+            35
+          ],
+          "nominal_missing_ratio": 0.3968253968253968,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          45,
+          61
+        ],
+        "sampled_missing_ratio": 0.254,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_006",
+      "label": 6,
+      "num_person": 2,
+      "num_frames": 66,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.11286407766990292,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.3106796116504854,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5006067961165048,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            20
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "torso",
+            "left_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "torso",
+            "left_arm",
+            "right_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.698688680346205,
+          "normalized_noise_rms": 0.020153461138421355,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.698688680346205,
+          "normalized_noise_rms": 0.050383652846053395,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.698688680346205,
+          "normalized_noise_rms": 0.10076730569210679,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            13,
+            20
+          ],
+          "nominal_missing_ratio": 0.10606060606060606,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            13,
+            29
+          ],
+          "nominal_missing_ratio": 0.24242424242424243,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            13,
+            39
+          ],
+          "nominal_missing_ratio": 0.3939393939393939,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          13,
+          29
+        ],
+        "sampled_missing_ratio": 0.243,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_007",
+      "label": 7,
+      "num_person": 2,
+      "num_frames": 69,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09657772621809745,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2952436194895592,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.48230858468677495,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_leg"
+          ],
+          "joint_indices": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_leg",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            12,
+            13,
+            14,
+            15,
+            20
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_leg",
+            "torso",
+            "right_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            20,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.1007869992038577,
+          "normalized_noise_rms": 0.020132757703554795,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.1007869992038577,
+          "normalized_noise_rms": 0.05033189425888699,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.1007869992038577,
+          "normalized_noise_rms": 0.10066378851777398,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            49,
+            56
+          ],
+          "nominal_missing_ratio": 0.10144927536231885,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            49,
+            66
+          ],
+          "nominal_missing_ratio": 0.2463768115942029,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            41,
+            69
+          ],
+          "nominal_missing_ratio": 0.4057971014492754,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "limb_occlusion"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "limb_occlusion"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "limb_occlusion"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          49,
+          66
+        ],
+        "sampled_missing_ratio": 0.246,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_008",
+      "label": 8,
+      "num_person": 2,
+      "num_frames": 72,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10044477390659748,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2983691623424759,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.49925871015567086,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_leg"
+          ],
+          "joint_indices": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_leg",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_leg",
+            "torso",
+            "left_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.1623878471526945,
+          "normalized_noise_rms": 0.02012845195548523,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.1623878471526945,
+          "normalized_noise_rms": 0.05032112988871307,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.1623878471526945,
+          "normalized_noise_rms": 0.10064225977742615,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            26,
+            33
+          ],
+          "nominal_missing_ratio": 0.09722222222222222,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            27,
+            45
+          ],
+          "nominal_missing_ratio": 0.25,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            27,
+            56
+          ],
+          "nominal_missing_ratio": 0.4027777777777778,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          27,
+          45
+        ],
+        "sampled_missing_ratio": 0.25,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_009",
+      "label": 9,
+      "num_person": 2,
+      "num_frames": 75,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09503470368392952,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.30806193272824345,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5029364655632674,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_arm",
+            "right_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_arm",
+            "right_arm",
+            "left_leg"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.700320448628785,
+          "normalized_noise_rms": 0.01981807909585569,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.700320448628785,
+          "normalized_noise_rms": 0.04954519773963922,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.700320448628785,
+          "normalized_noise_rms": 0.09909039547927843,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            24,
+            32
+          ],
+          "nominal_missing_ratio": 0.10666666666666667,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            28,
+            47
+          ],
+          "nominal_missing_ratio": 0.25333333333333335,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            28,
+            58
+          ],
+          "nominal_missing_ratio": 0.4,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          28,
+          47
+        ],
+        "sampled_missing_ratio": 0.254,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_010",
+      "label": 10,
+      "num_person": 2,
+      "num_frames": 78,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09921313718782074,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.29148135477249404,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5022237427300719,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            20
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "torso",
+            "left_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "torso",
+            "left_arm",
+            "right_leg"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.0332252319397224,
+          "normalized_noise_rms": 0.019915312332838542,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.0332252319397224,
+          "normalized_noise_rms": 0.04978828083209635,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.0332252319397224,
+          "normalized_noise_rms": 0.0995765616641927,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            3,
+            11
+          ],
+          "nominal_missing_ratio": 0.10256410256410256,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            3,
+            23
+          ],
+          "nominal_missing_ratio": 0.2564102564102564,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            3,
+            34
+          ],
+          "nominal_missing_ratio": 0.3974358974358974,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          3,
+          23
+        ],
+        "sampled_missing_ratio": 0.257,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_011",
+      "label": 11,
+      "num_person": 2,
+      "num_frames": 81,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10400197628458498,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.29718379446640314,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5032114624505929,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            20
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "torso",
+            "left_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "torso",
+            "left_arm",
+            "right_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.0484430418227917,
+          "normalized_noise_rms": 0.020182756383510095,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.0484430418227917,
+          "normalized_noise_rms": 0.05045689095877524,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.0484430418227917,
+          "normalized_noise_rms": 0.10091378191755047,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            69,
+            77
+          ],
+          "nominal_missing_ratio": 0.09876543209876543,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            55,
+            75
+          ],
+          "nominal_missing_ratio": 0.24691358024691357,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            5,
+            37
+          ],
+          "nominal_missing_ratio": 0.3950617283950617,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          55,
+          75
+        ],
+        "sampled_missing_ratio": 0.249,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_012",
+      "label": 12,
+      "num_person": 2,
+      "num_frames": 84,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09389895138226882,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2888465204957102,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.4918970448045758,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_leg"
+          ],
+          "joint_indices": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_leg",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            12,
+            13,
+            14,
+            15,
+            20
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_leg",
+            "torso",
+            "right_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            20,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.861329992723611,
+          "normalized_noise_rms": 0.020020556339662376,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.861329992723611,
+          "normalized_noise_rms": 0.05005139084915594,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.861329992723611,
+          "normalized_noise_rms": 0.10010278169831188,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            69,
+            77
+          ],
+          "nominal_missing_ratio": 0.09523809523809523,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            5,
+            26
+          ],
+          "nominal_missing_ratio": 0.25,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            5,
+            39
+          ],
+          "nominal_missing_ratio": 0.40476190476190477,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          5,
+          26
+        ],
+        "sampled_missing_ratio": 0.25,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_013",
+      "label": 13,
+      "num_person": 2,
+      "num_frames": 87,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10073597056117756,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2923183072677093,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.49126034958601655,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_arm",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            20,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_arm",
+            "torso",
+            "right_leg"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            19,
+            20,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.1127917655630766,
+          "normalized_noise_rms": 0.020142389329577993,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.1127917655630766,
+          "normalized_noise_rms": 0.05035597332394498,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.1127917655630766,
+          "normalized_noise_rms": 0.10071194664788996,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            27,
+            36
+          ],
+          "nominal_missing_ratio": 0.10344827586206896,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            27,
+            49
+          ],
+          "nominal_missing_ratio": 0.25287356321839083,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            27,
+            62
+          ],
+          "nominal_missing_ratio": 0.40229885057471265,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          27,
+          49
+        ],
+        "sampled_missing_ratio": 0.254,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_014",
+      "label": 14,
+      "num_person": 2,
+      "num_frames": 90,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09694633857100504,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.30358731099911057,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5007411799584939,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_arm",
+            "right_leg"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            19,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_arm",
+            "right_leg",
+            "left_leg"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.037153491731892,
+          "normalized_noise_rms": 0.019919802721299396,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.037153491731892,
+          "normalized_noise_rms": 0.049799506803248496,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.037153491731892,
+          "normalized_noise_rms": 0.09959901360649699,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            45,
+            54
+          ],
+          "nominal_missing_ratio": 0.1,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            45,
+            67
+          ],
+          "nominal_missing_ratio": 0.24444444444444444,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            45,
+            81
+          ],
+          "nominal_missing_ratio": 0.4,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          45,
+          67
+        ],
+        "sampled_missing_ratio": 0.245,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_015",
+      "label": 15,
+      "num_person": 2,
+      "num_frames": 93,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09298321136461472,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2991820921222557,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.49418854928971157,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_arm",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_arm",
+            "torso",
+            "right_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.7108961325947445,
+          "normalized_noise_rms": 0.020003081237464606,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.7108961325947445,
+          "normalized_noise_rms": 0.0500077030936615,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.7108961325947445,
+          "normalized_noise_rms": 0.100015406187323,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            52,
+            61
+          ],
+          "nominal_missing_ratio": 0.0967741935483871,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            52,
+            75
+          ],
+          "nominal_missing_ratio": 0.24731182795698925,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            52,
+            89
+          ],
+          "nominal_missing_ratio": 0.3978494623655914,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          52,
+          75
+        ],
+        "sampled_missing_ratio": 0.246,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_016",
+      "label": 16,
+      "num_person": 2,
+      "num_frames": 96,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09838799332962757,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2982212340188994,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5011117287381879,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_leg"
+          ],
+          "joint_indices": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_leg",
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            16,
+            17,
+            18,
+            19,
+            21,
+            22
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_leg",
+            "left_arm",
+            "left_leg"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21,
+            22
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.200531329729064,
+          "normalized_noise_rms": 0.019768577649339317,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.200531329729064,
+          "normalized_noise_rms": 0.04942144412334829,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.200531329729064,
+          "normalized_noise_rms": 0.09884288824669658,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            20,
+            30
+          ],
+          "nominal_missing_ratio": 0.10416666666666667,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            20,
+            44
+          ],
+          "nominal_missing_ratio": 0.25,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            58,
+            96
+          ],
+          "nominal_missing_ratio": 0.3958333333333333,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          20,
+          44
+        ],
+        "sampled_missing_ratio": 0.251,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_017",
+      "label": 17,
+      "num_person": 2,
+      "num_frames": 99,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10670978172999192,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.3088116410670978,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.49919159256265155,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_arm",
+            "left_leg"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_arm",
+            "left_leg",
+            "right_leg"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.246137440101755,
+          "normalized_noise_rms": 0.019910471954055105,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.246137440101755,
+          "normalized_noise_rms": 0.04977617988513776,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.246137440101755,
+          "normalized_noise_rms": 0.09955235977027552,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            15,
+            25
+          ],
+          "nominal_missing_ratio": 0.10101010101010101,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            15,
+            40
+          ],
+          "nominal_missing_ratio": 0.25252525252525254,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            15,
+            55
+          ],
+          "nominal_missing_ratio": 0.40404040404040403,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "coord_noise",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "coord_noise",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          15,
+          40
+        ],
+        "sampled_missing_ratio": 0.253,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_018",
+      "label": 18,
+      "num_person": 2,
+      "num_frames": 102,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10125588697017268,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2923861852433281,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.4933281004709576,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "left_leg"
+          ],
+          "joint_indices": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "left_leg",
+            "right_leg"
+          ],
+          "joint_indices": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "left_leg",
+            "right_leg",
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.8092061331985705,
+          "normalized_noise_rms": 0.019829026100433345,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.8092061331985705,
+          "normalized_noise_rms": 0.04957256525108337,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.8092061331985705,
+          "normalized_noise_rms": 0.09914513050216674,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            31,
+            41
+          ],
+          "nominal_missing_ratio": 0.09803921568627451,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            31,
+            57
+          ],
+          "nominal_missing_ratio": 0.2549019607843137,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            31,
+            72
+          ],
+          "nominal_missing_ratio": 0.4019607843137255,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          31,
+          57
+        ],
+        "sampled_missing_ratio": 0.257,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_019",
+      "label": 19,
+      "num_person": 2,
+      "num_frames": 105,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09737042682926829,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.29115853658536583,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.49352134146341464,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_arm",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            20,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_arm",
+            "torso",
+            "left_leg"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            20,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.212527677051447,
+          "normalized_noise_rms": 0.020199249125123272,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.212527677051447,
+          "normalized_noise_rms": 0.05049812281280819,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.212527677051447,
+          "normalized_noise_rms": 0.10099624562561638,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            36,
+            46
+          ],
+          "nominal_missing_ratio": 0.09523809523809523,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            36,
+            62
+          ],
+          "nominal_missing_ratio": 0.24761904761904763,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            36,
+            78
+          ],
+          "nominal_missing_ratio": 0.4,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          36,
+          62
+        ],
+        "sampled_missing_ratio": 0.253,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_020",
+      "label": 20,
+      "num_person": 2,
+      "num_frames": 108,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09733201581027667,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2959486166007905,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.49184782608695654,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_arm",
+            "left_arm"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_arm",
+            "left_arm",
+            "right_leg"
+          ],
+          "joint_indices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            19,
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.1490846539718804,
+          "normalized_noise_rms": 0.01977457774892952,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.1490846539718804,
+          "normalized_noise_rms": 0.04943644437232381,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.1490846539718804,
+          "normalized_noise_rms": 0.09887288874464761,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            95,
+            106
+          ],
+          "nominal_missing_ratio": 0.10185185185185185,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            25,
+            52
+          ],
+          "nominal_missing_ratio": 0.25,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            25,
+            68
+          ],
+          "nominal_missing_ratio": 0.39814814814814814,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          25,
+          52
+        ],
+        "sampled_missing_ratio": 0.248,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_021",
+      "label": 21,
+      "num_person": 2,
+      "num_frames": 111,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09736747205192932,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.30760908763072486,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5164082221420844,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_arm"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_arm",
+            "left_leg"
+          ],
+          "joint_indices": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            23,
+            24
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_arm",
+            "left_leg",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            20,
+            23,
+            24
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.905683198679156,
+          "normalized_noise_rms": 0.01985259709684659,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.905683198679156,
+          "normalized_noise_rms": 0.04963149274211648,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.905683198679156,
+          "normalized_noise_rms": 0.09926298548423296,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            41,
+            52
+          ],
+          "nominal_missing_ratio": 0.0990990990990991,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            41,
+            69
+          ],
+          "nominal_missing_ratio": 0.25225225225225223,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            41,
+            85
+          ],
+          "nominal_missing_ratio": 0.3963963963963964,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "frame_missing"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "frame_missing"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "limb_occlusion",
+            "frame_missing"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          41,
+          69
+        ],
+        "sampled_missing_ratio": 0.252,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_022",
+      "label": 22,
+      "num_person": 2,
+      "num_frames": 114,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.10086590217645683,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.30587409314299085,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5019892347296981,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_leg"
+          ],
+          "joint_indices": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_leg",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_leg",
+            "torso",
+            "left_leg"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.0122258491666303,
+          "normalized_noise_rms": 0.02012884690701336,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.0122258491666303,
+          "normalized_noise_rms": 0.050322117267533405,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.0122258491666303,
+          "normalized_noise_rms": 0.10064423453506681,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            87,
+            98
+          ],
+          "nominal_missing_ratio": 0.09649122807017543,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            42,
+            70
+          ],
+          "nominal_missing_ratio": 0.24561403508771928,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            42,
+            88
+          ],
+          "nominal_missing_ratio": 0.40350877192982454,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          42,
+          70
+        ],
+        "sampled_missing_ratio": 0.244,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_023",
+      "label": 23,
+      "num_person": 2,
+      "num_frames": 117,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.09695622435020519,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.2905266757865937,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.4957250341997264,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_leg"
+          ],
+          "joint_indices": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_leg",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_leg",
+            "torso",
+            "left_arm"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 3.00292901542613,
+          "normalized_noise_rms": 0.019981566161352368,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 3.00292901542613,
+          "normalized_noise_rms": 0.049953915403380914,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 3.00292901542613,
+          "normalized_noise_rms": 0.09990783080676183,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            62,
+            74
+          ],
+          "nominal_missing_ratio": 0.10256410256410256,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            62,
+            91
+          ],
+          "nominal_missing_ratio": 0.24786324786324787,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            62,
+            109
+          ],
+          "nominal_missing_ratio": 0.4017094017094017,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "limb_occlusion",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          62,
+          91
+        ],
+        "sampled_missing_ratio": 0.253,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    },
+    {
+      "sample_id": "synthetic_024",
+      "label": 24,
+      "num_person": 2,
+      "num_frames": 120,
+      "num_joints": 25,
+      "conditions": {
+        "joint_missing_mild": {
+          "effective_missing_ratio": 0.1027351567711808,
+          "target_ratio": 0.1
+        },
+        "joint_missing_moderate": {
+          "effective_missing_ratio": 0.3028685790527018,
+          "target_ratio": 0.3
+        },
+        "joint_missing_severe": {
+          "effective_missing_ratio": 0.5066711140760507,
+          "target_ratio": 0.5
+        },
+        "limb_occlusion_mild": {
+          "parts": [
+            "right_leg"
+          ],
+          "joint_indices": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "limb_occlusion_moderate": {
+          "parts": [
+            "right_leg",
+            "torso"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "limb_occlusion_severe": {
+          "parts": [
+            "right_leg",
+            "torso",
+            "left_leg"
+          ],
+          "joint_indices": [
+            0,
+            1,
+            2,
+            3,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "coord_noise_mild": {
+          "skeleton_scale": 2.8644160149138793,
+          "normalized_noise_rms": 0.02001323162480479,
+          "target_sigma": 0.02
+        },
+        "coord_noise_moderate": {
+          "skeleton_scale": 2.8644160149138793,
+          "normalized_noise_rms": 0.05003307906201199,
+          "target_sigma": 0.05
+        },
+        "coord_noise_severe": {
+          "skeleton_scale": 2.8644160149138793,
+          "normalized_noise_rms": 0.10006615812402397,
+          "target_sigma": 0.1
+        },
+        "frame_missing_mild": {
+          "frame_range": [
+            39,
+            51
+          ],
+          "nominal_missing_ratio": 0.1,
+          "target_ratio": 0.1
+        },
+        "frame_missing_moderate": {
+          "frame_range": [
+            39,
+            69
+          ],
+          "nominal_missing_ratio": 0.25,
+          "target_ratio": 0.25
+        },
+        "frame_missing_severe": {
+          "frame_range": [
+            39,
+            87
+          ],
+          "nominal_missing_ratio": 0.4,
+          "target_ratio": 0.4
+        },
+        "mixed_mild": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        },
+        "mixed_moderate": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        },
+        "mixed_severe": {
+          "applied_types": [
+            "joint_missing",
+            "coord_noise"
+          ]
+        }
+      },
+      "multiclip": {
+        "original_frame_range": [
+          39,
+          69
+        ],
+        "sampled_missing_ratio": 0.244,
+        "num_clips": 10,
+        "clip_len": 100
+      }
+    }
+  ]
+}

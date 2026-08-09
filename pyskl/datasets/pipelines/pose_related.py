@@ -209,8 +209,11 @@ class RandomSkeletonDegrade:
 
     Supported degradation types are random joint missing, body-part occlusion,
     coordinate noise, continuous frame missing and their mixture. The transform
-    expects ``results['keypoint']`` in ``M x T x V x C`` format and should be
-    placed after ``PoseDecode`` and before ``FormatGCNInput``.
+    expects ``results['keypoint']`` in ``M x T x V x C`` format. For
+    multi-clip evaluation it should be placed before ``UniformSample`` so one
+    physical frame receives one corruption that is shared by all sampled
+    clips. ``PreNormalize3D`` may still run first so missing frames are not
+    removed as empty input frames during normalization.
     """
 
     _SEVERITY_PRESETS = {
@@ -344,7 +347,8 @@ class RandomSkeletonDegrade:
     def _joint_missing(self, results, rng, coord_dims):
         keypoint = results['keypoint']
         M, T, V, _ = keypoint.shape
-        mask = rng.rand(M, T, V) < self.joint_missing_ratio
+        valid = self._valid_mask(keypoint, coord_dims)
+        mask = (rng.rand(M, T, V) < self.joint_missing_ratio) & valid
         self._zero_keypoints(keypoint, mask, coord_dims)
         self._zero_scores(results, mask)
         return mask
@@ -362,14 +366,16 @@ class RandomSkeletonDegrade:
             if isinstance(chosen, str):
                 chosen = [chosen]
 
-        mask = np.zeros((M, T, V), dtype=bool)
+        part_mask = np.zeros((M, T, V), dtype=bool)
         for part in chosen:
             if part not in parts:
                 raise KeyError(f'Unknown body part {part} for {self.dataset}')
             valid_joints = [idx for idx in parts[part] if idx < V]
-            mask[:, :, valid_joints] = True
+            part_mask[:, :, valid_joints] = True
+        mask = part_mask & self._valid_mask(keypoint, coord_dims)
         self._zero_keypoints(keypoint, mask, coord_dims)
         self._zero_scores(results, mask)
+        results['degrade_parts'] = [str(part) for part in chosen]
         return mask
 
     def _coord_noise(self, results, rng, coord_dims):
@@ -385,6 +391,7 @@ class RandomSkeletonDegrade:
         noise = rng.randn(*coords.shape) * self.coord_noise_sigma * scale
         coords += noise * valid[..., None]
         keypoint[..., :coord_dims] = coords
+        results['degrade_coord_scale'] = scale
         return valid
 
     def _frame_missing(self, results, rng, coord_dims):
@@ -395,10 +402,12 @@ class RandomSkeletonDegrade:
             return np.zeros((M, T, V), dtype=bool)
         missing_len = min(missing_len, T)
         start = rng.randint(0, T - missing_len + 1)
-        mask = np.zeros((M, T, V), dtype=bool)
-        mask[:, start:start + missing_len, :] = True
-        self._zero_keypoints(keypoint, mask, coord_dims)
-        self._zero_scores(results, mask)
+        frame_mask = np.zeros((M, T, V), dtype=bool)
+        frame_mask[:, start:start + missing_len, :] = True
+        mask = frame_mask & self._valid_mask(keypoint, coord_dims)
+        self._zero_keypoints(keypoint, frame_mask, coord_dims)
+        self._zero_scores(results, frame_mask)
+        results['degrade_frame_range'] = [int(start), int(start + missing_len)]
         return mask
 
     def _apply_one(self, degrade_type, results, rng, coord_dims):
@@ -432,13 +441,19 @@ class RandomSkeletonDegrade:
                 applied = [rng.choice(self.mixed_degrade_types)]
             for item in applied:
                 degrade_mask |= self._apply_one(item, results, rng, coord_dims)
-            results['degrade_types'] = applied
+            results['degrade_types'] = [str(item) for item in applied]
         else:
             degrade_mask = self._apply_one(
                 self.degrade_type, results, rng, coord_dims)
             results['degrade_types'] = [self.degrade_type]
 
         results['degrade_severity'] = self.severity
+        results['degrade_seed'] = self.seed
+        results['degrade_params'] = dict(
+            joint_missing_ratio=self.joint_missing_ratio,
+            num_occluded_parts=self.num_occluded_parts,
+            coord_noise_sigma=self.coord_noise_sigma,
+            frame_missing_ratio=self.frame_missing_ratio)
         if self.return_mask:
             results['degrade_mask'] = degrade_mask
         return results

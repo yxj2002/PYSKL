@@ -142,4 +142,7 @@ work_dirs/**/*.tar
 !work_dirs/**/*.log.json
 !work_dirs/**/result*.pkl
 !work_dirs/**/metrics*.json
+# Keep the best prediction scores and checkpoint for each experiment.
+!work_dirs/**/best_pred.pkl
+!work_dirs/**/best_top1_acc_epoch_*.pth
 !work_dirs/**/README.md
