@@ -101,6 +101,7 @@ venv.bak/
 /data
 .vscode
 .idea
+research_notes/
 *.pkl
 *.pkl.json
 *.log.json
