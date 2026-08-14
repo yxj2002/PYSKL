@@ -1,8 +1,11 @@
 model = dict(
     type='RecognizerGCN',
     backbone=dict(
-        type='CTRGCN', graph_cfg=dict(layout='nturgb+d', mode='spatial')),
+        type='CTRGCN',
+        graph_cfg=dict(layout='nturgb+d', mode='spatial')),
     cls_head=dict(type='GCNHead', num_classes=60, in_channels=256))
+# Stage 2 clean baseline, seed 3407 (passed via `--seed 3407`).
+
 dataset_type = 'PoseDataset'
 ann_file = 'data/nturgbd/ntu60_3danno.pkl'
 train_pipeline = [
@@ -33,8 +36,8 @@ test_pipeline = [
     dict(type='ToTensor', keys=['keypoint'])
 ]
 data = dict(
-    videos_per_gpu=64,
-    workers_per_gpu=4,
+    videos_per_gpu=32,
+    workers_per_gpu=2,
     test_dataloader=dict(videos_per_gpu=1),
     train=dict(
         type='RepeatDataset',
@@ -79,7 +82,7 @@ data = dict(
         ],
         split='xsub_val'))
 optimizer = dict(
-    type='SGD', lr=0.05, momentum=0.9, weight_decay=0.0005, nesterov=True)
+    type='SGD', lr=0.025, momentum=0.9, weight_decay=0.0005, nesterov=True)
 optimizer_config = dict(grad_clip=None)
 lr_config = dict(policy='CosineAnnealing', min_lr=0, by_epoch=False)
 total_epochs = 16
@@ -87,6 +90,6 @@ checkpoint_config = dict(interval=1)
 evaluation = dict(interval=1, metrics=['top_k_accuracy'])
 log_config = dict(interval=100, hooks=[dict(type='TextLoggerHook')])
 log_level = 'INFO'
-work_dir = './work_dirs/ctrgcn/ctrgcn_pyskl_ntu60_xsub_3dkp/j_single_gpu'
+work_dir = './work_dirs/ctrgcn/ctrgcn_pyskl_ntu60_xsub_3dkp/j_single_gpu_seed3407'
 dist_params = dict(backend='gloo')
 gpu_ids = range(0, 1)
