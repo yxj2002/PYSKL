@@ -93,6 +93,6 @@ checkpoint_config = dict(interval=1)
 evaluation = dict(interval=1, metrics=['top_k_accuracy'])
 log_config = dict(interval=100, hooks=[dict(type='TextLoggerHook')])
 log_level = 'INFO'
-work_dir = './work_dirs/stgcn++/ntu60_xsub_3dkp/j_single_gpu_seed3407'
+work_dir = './work_dirs/stgcn++/stgcnpp_pyskl_ntu60_xsub_3dkp/j_single_gpu_seed3407'
 dist_params = dict(backend='gloo')
 gpu_ids = range(0, 1)

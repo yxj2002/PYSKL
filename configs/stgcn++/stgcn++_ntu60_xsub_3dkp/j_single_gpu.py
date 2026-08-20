@@ -60,8 +60,8 @@ log_config = dict(interval=100, hooks=[dict(type='TextLoggerHook')])
 
 # runtime settings
 log_level = 'INFO'
-work_dir = './work_dirs/stgcn++/stgcn++_ntu60_xsub_3dkp/j'
+work_dir = './work_dirs/stgcn++/stgcnpp_pyskl_ntu60_xsub_3dkp/j'
 
 # 文件最后追加
 dist_params = dict(backend='gloo')
-work_dir = './work_dirs/stgcn++/ntu60_xsub_3dkp/j_single_gpu'
+work_dir = './work_dirs/stgcn++/stgcnpp_pyskl_ntu60_xsub_3dkp/j_single_gpu'
