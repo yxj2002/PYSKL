@@ -101,7 +101,10 @@ venv.bak/
 /data
 .vscode
 .idea
-research_notes/
+# Ignore research notes EXCEPT the results directory (lightweight CSVs/JSONs
+# that should be version-controlled).
+research_notes/*
+!research_notes/results/
 *.pkl
 *.pkl.json
 *.log.json
