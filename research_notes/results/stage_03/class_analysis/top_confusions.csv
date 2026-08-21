@@ -1,0 +1,931 @@
+﻿model,condition,kind,count,true_class_id,true_action,predicted_class_id,predicted_action
+stgcn,clean,all_error,210,11,writing,29,typing on a keyboard
+stgcn,clean,all_error,206,15,wear a shoe,16,take off a shoe
+stgcn,clean,all_error,125,10,reading,11,writing
+stgcn,clean,all_error,115,30,pointing to something with finger,31,taking a selfie
+stgcn,clean,all_error,101,10,reading,28,playing with phone/tablet
+stgcn,clean,all_error,95,11,writing,28,playing with phone/tablet
+stgcn,clean,all_error,91,29,typing on a keyboard,11,writing
+stgcn,clean,all_error,63,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,clean,all_error,56,9,clapping,33,rub two hands together
+stgcn,clean,all_error,49,16,take off a shoe,15,wear a shoe
+stgcn,joint_missing_mild,new_error,319,41,staggering,13,wear jacket
+stgcn,joint_missing_mild,new_error,293,58,walking towards each other,13,wear jacket
+stgcn,joint_missing_mild,new_error,194,58,walking towards each other,59,walking apart from each other
+stgcn,joint_missing_mild,new_error,137,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,joint_missing_mild,new_error,134,10,reading,29,typing on a keyboard
+stgcn,joint_missing_mild,new_error,73,42,falling,5,pickup
+stgcn,joint_missing_mild,new_error,69,57,handshaking,9,clapping
+stgcn,joint_missing_mild,new_error,68,50,kicking other person,14,take off jacket
+stgcn,joint_missing_mild,new_error,68,2,brushing teeth,0,drink water
+stgcn,joint_missing_mild,new_error,59,27,make a phone call/answer phone,0,drink water
+stgcn,joint_missing_mild,all_error,349,11,writing,29,typing on a keyboard
+stgcn,joint_missing_mild,all_error,330,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,joint_missing_mild,all_error,320,41,staggering,13,wear jacket
+stgcn,joint_missing_mild,all_error,293,58,walking towards each other,13,wear jacket
+stgcn,joint_missing_mild,all_error,218,10,reading,29,typing on a keyboard
+stgcn,joint_missing_mild,all_error,197,58,walking towards each other,59,walking apart from each other
+stgcn,joint_missing_mild,all_error,149,30,pointing to something with finger,31,taking a selfie
+stgcn,joint_missing_mild,all_error,107,23,kicking something,13,wear jacket
+stgcn,joint_missing_mild,all_error,87,15,wear a shoe,16,take off a shoe
+stgcn,joint_missing_mild,all_error,73,42,falling,5,pickup
+stgcn,limb_occlusion_mild,new_error,104,29,typing on a keyboard,11,writing
+stgcn,limb_occlusion_mild,new_error,94,37,salute,35,shake head
+stgcn,limb_occlusion_mild,new_error,92,22,hand waving,35,shake head
+stgcn,limb_occlusion_mild,new_error,71,53,point finger at the other person,52,pat on back of other person
+stgcn,limb_occlusion_mild,new_error,66,55,giving something to other person,56,touch other person's pocket
+stgcn,limb_occlusion_mild,new_error,51,15,wear a shoe,16,take off a shoe
+stgcn,limb_occlusion_mild,new_error,47,57,handshaking,52,pat on back of other person
+stgcn,limb_occlusion_mild,new_error,41,20,take off a hat/cap,35,shake head
+stgcn,limb_occlusion_mild,new_error,38,36,wipe face,35,shake head
+stgcn,limb_occlusion_mild,new_error,28,35,shake head,29,typing on a keyboard
+stgcn,limb_occlusion_mild,all_error,219,15,wear a shoe,16,take off a shoe
+stgcn,limb_occlusion_mild,all_error,199,29,typing on a keyboard,11,writing
+stgcn,limb_occlusion_mild,all_error,170,11,writing,29,typing on a keyboard
+stgcn,limb_occlusion_mild,all_error,168,10,reading,11,writing
+stgcn,limb_occlusion_mild,all_error,124,11,writing,28,playing with phone/tablet
+stgcn,limb_occlusion_mild,all_error,101,22,hand waving,35,shake head
+stgcn,limb_occlusion_mild,all_error,91,53,point finger at the other person,52,pat on back of other person
+stgcn,limb_occlusion_mild,all_error,86,28,playing with phone/tablet,11,writing
+stgcn,limb_occlusion_mild,all_error,73,37,salute,35,shake head
+stgcn,limb_occlusion_mild,all_error,71,30,pointing to something with finger,31,taking a selfie
+stgcn,coord_noise_mild,new_error,193,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,coord_noise_mild,new_error,161,38,put the palms together,9,clapping
+stgcn,coord_noise_mild,new_error,159,12,tear up paper,29,typing on a keyboard
+stgcn,coord_noise_mild,new_error,157,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcn,coord_noise_mild,new_error,156,28,playing with phone/tablet,11,writing
+stgcn,coord_noise_mild,new_error,151,10,reading,29,typing on a keyboard
+stgcn,coord_noise_mild,new_error,116,35,shake head,29,typing on a keyboard
+stgcn,coord_noise_mild,new_error,116,33,rub two hands together,9,clapping
+stgcn,coord_noise_mild,new_error,110,35,shake head,53,point finger at the other person
+stgcn,coord_noise_mild,new_error,108,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+stgcn,coord_noise_mild,all_error,328,11,writing,29,typing on a keyboard
+stgcn,coord_noise_mild,all_error,302,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,coord_noise_mild,all_error,301,10,reading,29,typing on a keyboard
+stgcn,coord_noise_mild,all_error,232,28,playing with phone/tablet,11,writing
+stgcn,coord_noise_mild,all_error,212,10,reading,11,writing
+stgcn,coord_noise_mild,all_error,177,12,tear up paper,29,typing on a keyboard
+stgcn,coord_noise_mild,all_error,168,38,put the palms together,9,clapping
+stgcn,coord_noise_mild,all_error,168,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcn,coord_noise_mild,all_error,114,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+stgcn,coord_noise_mild,all_error,111,35,shake head,53,point finger at the other person
+stgcn,frame_missing_mild,new_error,120,53,point finger at the other person,52,pat on back of other person
+stgcn,frame_missing_mild,new_error,94,15,wear a shoe,16,take off a shoe
+stgcn,frame_missing_mild,new_error,62,56,touch other person's pocket,52,pat on back of other person
+stgcn,frame_missing_mild,new_error,61,18,take off glasses,20,take off a hat/cap
+stgcn,frame_missing_mild,new_error,36,11,writing,10,reading
+stgcn,frame_missing_mild,new_error,35,31,taking a selfie,30,pointing to something with finger
+stgcn,frame_missing_mild,new_error,34,41,staggering,23,kicking something
+stgcn,frame_missing_mild,new_error,24,11,writing,29,typing on a keyboard
+stgcn,frame_missing_mild,new_error,23,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,frame_missing_mild,new_error,19,27,make a phone call/answer phone,28,playing with phone/tablet
+stgcn,frame_missing_mild,all_error,236,15,wear a shoe,16,take off a shoe
+stgcn,frame_missing_mild,all_error,222,11,writing,29,typing on a keyboard
+stgcn,frame_missing_mild,all_error,152,53,point finger at the other person,52,pat on back of other person
+stgcn,frame_missing_mild,all_error,87,11,writing,28,playing with phone/tablet
+stgcn,frame_missing_mild,all_error,87,10,reading,11,writing
+stgcn,frame_missing_mild,all_error,73,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,frame_missing_mild,all_error,68,30,pointing to something with finger,31,taking a selfie
+stgcn,frame_missing_mild,all_error,42,10,reading,28,playing with phone/tablet
+stgcn,frame_missing_mild,all_error,39,11,writing,10,reading
+stgcn,frame_missing_mild,all_error,36,16,take off a shoe,15,wear a shoe
+stgcn,mixed_mild,new_error,171,35,shake head,29,typing on a keyboard
+stgcn,mixed_mild,new_error,167,58,walking towards each other,13,wear jacket
+stgcn,mixed_mild,new_error,167,24,reach into pocket,29,typing on a keyboard
+stgcn,mixed_mild,new_error,130,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,mixed_mild,new_error,127,41,staggering,13,wear jacket
+stgcn,mixed_mild,new_error,115,10,reading,29,typing on a keyboard
+stgcn,mixed_mild,new_error,104,28,playing with phone/tablet,11,writing
+stgcn,mixed_mild,new_error,72,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcn,mixed_mild,new_error,70,53,point finger at the other person,52,pat on back of other person
+stgcn,mixed_mild,new_error,64,38,put the palms together,9,clapping
+stgcn,mixed_mild,all_error,323,11,writing,29,typing on a keyboard
+stgcn,mixed_mild,all_error,285,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,mixed_mild,all_error,212,15,wear a shoe,16,take off a shoe
+stgcn,mixed_mild,all_error,196,10,reading,29,typing on a keyboard
+stgcn,mixed_mild,all_error,167,58,walking towards each other,13,wear jacket
+stgcn,mixed_mild,all_error,150,28,playing with phone/tablet,11,writing
+stgcn,mixed_mild,all_error,146,24,reach into pocket,29,typing on a keyboard
+stgcn,mixed_mild,all_error,132,35,shake head,29,typing on a keyboard
+stgcn,mixed_mild,all_error,127,41,staggering,13,wear jacket
+stgcn,mixed_mild,all_error,127,10,reading,11,writing
+stgcn,joint_missing_moderate,new_error,594,58,walking towards each other,13,wear jacket
+stgcn,joint_missing_moderate,new_error,406,42,falling,31,taking a selfie
+stgcn,joint_missing_moderate,new_error,358,59,walking apart from each other,13,wear jacket
+stgcn,joint_missing_moderate,new_error,342,24,reach into pocket,29,typing on a keyboard
+stgcn,joint_missing_moderate,new_error,336,21,cheer up,31,taking a selfie
+stgcn,joint_missing_moderate,new_error,314,7,sitting down,31,taking a selfie
+stgcn,joint_missing_moderate,new_error,282,45,touch back (backache),29,typing on a keyboard
+stgcn,joint_missing_moderate,new_error,187,35,shake head,28,playing with phone/tablet
+stgcn,joint_missing_moderate,new_error,171,7,sitting down,16,take off a shoe
+stgcn,joint_missing_moderate,new_error,166,53,point finger at the other person,9,clapping
+stgcn,joint_missing_moderate,all_error,436,58,walking towards each other,13,wear jacket
+stgcn,joint_missing_moderate,all_error,412,42,falling,31,taking a selfie
+stgcn,joint_missing_moderate,all_error,389,24,reach into pocket,29,typing on a keyboard
+stgcn,joint_missing_moderate,all_error,371,59,walking apart from each other,13,wear jacket
+stgcn,joint_missing_moderate,all_error,355,21,cheer up,31,taking a selfie
+stgcn,joint_missing_moderate,all_error,235,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,joint_missing_moderate,all_error,223,10,reading,29,typing on a keyboard
+stgcn,joint_missing_moderate,all_error,210,11,writing,29,typing on a keyboard
+stgcn,joint_missing_moderate,all_error,195,35,shake head,28,playing with phone/tablet
+stgcn,joint_missing_moderate,all_error,174,7,sitting down,16,take off a shoe
+stgcn,limb_occlusion_moderate,new_error,149,22,hand waving,35,shake head
+stgcn,limb_occlusion_moderate,new_error,140,37,salute,35,shake head
+stgcn,limb_occlusion_moderate,new_error,134,29,typing on a keyboard,11,writing
+stgcn,limb_occlusion_moderate,new_error,93,35,shake head,29,typing on a keyboard
+stgcn,limb_occlusion_moderate,new_error,91,53,point finger at the other person,30,pointing to something with finger
+stgcn,limb_occlusion_moderate,new_error,83,53,point finger at the other person,52,pat on back of other person
+stgcn,limb_occlusion_moderate,new_error,79,15,wear a shoe,16,take off a shoe
+stgcn,limb_occlusion_moderate,new_error,78,3,brushing hair,35,shake head
+stgcn,limb_occlusion_moderate,new_error,77,28,playing with phone/tablet,11,writing
+stgcn,limb_occlusion_moderate,new_error,43,26,jump up,23,kicking something
+stgcn,limb_occlusion_moderate,all_error,264,29,typing on a keyboard,11,writing
+stgcn,limb_occlusion_moderate,all_error,220,15,wear a shoe,16,take off a shoe
+stgcn,limb_occlusion_moderate,all_error,190,11,writing,29,typing on a keyboard
+stgcn,limb_occlusion_moderate,all_error,155,37,salute,35,shake head
+stgcn,limb_occlusion_moderate,all_error,152,10,reading,11,writing
+stgcn,limb_occlusion_moderate,all_error,127,28,playing with phone/tablet,11,writing
+stgcn,limb_occlusion_moderate,all_error,114,22,hand waving,35,shake head
+stgcn,limb_occlusion_moderate,all_error,110,11,writing,28,playing with phone/tablet
+stgcn,limb_occlusion_moderate,all_error,90,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,limb_occlusion_moderate,all_error,89,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcn,coord_noise_moderate,new_error,383,35,shake head,29,typing on a keyboard
+stgcn,coord_noise_moderate,new_error,321,25,hopping (one foot jumping),13,wear jacket
+stgcn,coord_noise_moderate,new_error,248,59,walking apart from each other,13,wear jacket
+stgcn,coord_noise_moderate,new_error,237,51,pushing other person,13,wear jacket
+stgcn,coord_noise_moderate,new_error,214,41,staggering,13,wear jacket
+stgcn,coord_noise_moderate,new_error,213,55,giving something to other person,11,writing
+stgcn,coord_noise_moderate,new_error,198,49,punching/slapping other person,13,wear jacket
+stgcn,coord_noise_moderate,new_error,197,54,hugging other person,13,wear jacket
+stgcn,coord_noise_moderate,new_error,194,57,handshaking,11,writing
+stgcn,coord_noise_moderate,new_error,182,24,reach into pocket,29,typing on a keyboard
+stgcn,coord_noise_moderate,all_error,255,59,walking apart from each other,13,wear jacket
+stgcn,coord_noise_moderate,all_error,240,51,pushing other person,13,wear jacket
+stgcn,coord_noise_moderate,all_error,230,55,giving something to other person,11,writing
+stgcn,coord_noise_moderate,all_error,222,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,coord_noise_moderate,all_error,220,49,punching/slapping other person,13,wear jacket
+stgcn,coord_noise_moderate,all_error,217,35,shake head,29,typing on a keyboard
+stgcn,coord_noise_moderate,all_error,214,41,staggering,13,wear jacket
+stgcn,coord_noise_moderate,all_error,213,24,reach into pocket,29,typing on a keyboard
+stgcn,coord_noise_moderate,all_error,205,11,writing,29,typing on a keyboard
+stgcn,coord_noise_moderate,all_error,204,54,hugging other person,13,wear jacket
+stgcn,frame_missing_moderate,new_error,151,41,staggering,23,kicking something
+stgcn,frame_missing_moderate,new_error,126,53,point finger at the other person,52,pat on back of other person
+stgcn,frame_missing_moderate,new_error,113,31,taking a selfie,30,pointing to something with finger
+stgcn,frame_missing_moderate,new_error,104,51,pushing other person,54,hugging other person
+stgcn,frame_missing_moderate,new_error,101,11,writing,29,typing on a keyboard
+stgcn,frame_missing_moderate,new_error,97,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,frame_missing_moderate,new_error,83,15,wear a shoe,16,take off a shoe
+stgcn,frame_missing_moderate,new_error,78,57,handshaking,54,hugging other person
+stgcn,frame_missing_moderate,new_error,63,20,take off a hat/cap,37,salute
+stgcn,frame_missing_moderate,new_error,46,56,touch other person's pocket,52,pat on back of other person
+stgcn,frame_missing_moderate,all_error,340,11,writing,29,typing on a keyboard
+stgcn,frame_missing_moderate,all_error,201,15,wear a shoe,16,take off a shoe
+stgcn,frame_missing_moderate,all_error,155,41,staggering,23,kicking something
+stgcn,frame_missing_moderate,all_error,155,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,frame_missing_moderate,all_error,146,53,point finger at the other person,52,pat on back of other person
+stgcn,frame_missing_moderate,all_error,134,31,taking a selfie,30,pointing to something with finger
+stgcn,frame_missing_moderate,all_error,121,10,reading,29,typing on a keyboard
+stgcn,frame_missing_moderate,all_error,84,51,pushing other person,54,hugging other person
+stgcn,frame_missing_moderate,all_error,65,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcn,frame_missing_moderate,all_error,62,28,playing with phone/tablet,4,drop
+stgcn,mixed_moderate,new_error,227,58,walking towards each other,13,wear jacket
+stgcn,mixed_moderate,new_error,195,35,shake head,29,typing on a keyboard
+stgcn,mixed_moderate,new_error,174,24,reach into pocket,29,typing on a keyboard
+stgcn,mixed_moderate,new_error,126,59,walking apart from each other,13,wear jacket
+stgcn,mixed_moderate,new_error,106,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,mixed_moderate,new_error,98,49,punching/slapping other person,13,wear jacket
+stgcn,mixed_moderate,new_error,94,12,tear up paper,29,typing on a keyboard
+stgcn,mixed_moderate,new_error,89,1,eat meal/snack,29,typing on a keyboard
+stgcn,mixed_moderate,new_error,88,41,staggering,13,wear jacket
+stgcn,mixed_moderate,new_error,87,51,pushing other person,13,wear jacket
+stgcn,mixed_moderate,all_error,353,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,mixed_moderate,all_error,257,11,writing,29,typing on a keyboard
+stgcn,mixed_moderate,all_error,203,35,shake head,29,typing on a keyboard
+stgcn,mixed_moderate,all_error,203,24,reach into pocket,29,typing on a keyboard
+stgcn,mixed_moderate,all_error,190,28,playing with phone/tablet,11,writing
+stgcn,mixed_moderate,all_error,152,58,walking towards each other,13,wear jacket
+stgcn,mixed_moderate,all_error,132,10,reading,29,typing on a keyboard
+stgcn,mixed_moderate,all_error,130,59,walking apart from each other,13,wear jacket
+stgcn,mixed_moderate,all_error,105,49,punching/slapping other person,13,wear jacket
+stgcn,mixed_moderate,all_error,105,10,reading,11,writing
+stgcn,joint_missing_severe,new_error,454,42,falling,31,taking a selfie
+stgcn,joint_missing_severe,new_error,451,21,cheer up,31,taking a selfie
+stgcn,joint_missing_severe,new_error,355,57,handshaking,11,writing
+stgcn,joint_missing_severe,new_error,353,52,pat on back of other person,11,writing
+stgcn,joint_missing_severe,new_error,350,56,touch other person's pocket,11,writing
+stgcn,joint_missing_severe,new_error,312,12,tear up paper,11,writing
+stgcn,joint_missing_severe,new_error,226,14,take off jacket,11,writing
+stgcn,joint_missing_severe,new_error,215,8,standing up (from sitting position),11,writing
+stgcn,joint_missing_severe,new_error,212,58,walking towards each other,13,wear jacket
+stgcn,joint_missing_severe,new_error,211,7,sitting down,31,taking a selfie
+stgcn,joint_missing_severe,all_error,476,21,cheer up,31,taking a selfie
+stgcn,joint_missing_severe,all_error,461,42,falling,31,taking a selfie
+stgcn,joint_missing_severe,all_error,370,56,touch other person's pocket,11,writing
+stgcn,joint_missing_severe,all_error,366,52,pat on back of other person,11,writing
+stgcn,joint_missing_severe,all_error,348,12,tear up paper,11,writing
+stgcn,joint_missing_severe,all_error,234,14,take off jacket,11,writing
+stgcn,joint_missing_severe,all_error,231,57,handshaking,11,writing
+stgcn,joint_missing_severe,all_error,227,3,brushing hair,31,taking a selfie
+stgcn,joint_missing_severe,all_error,224,55,giving something to other person,11,writing
+stgcn,joint_missing_severe,all_error,218,8,standing up (from sitting position),11,writing
+stgcn,limb_occlusion_severe,new_error,278,35,shake head,29,typing on a keyboard
+stgcn,limb_occlusion_severe,new_error,158,2,brushing teeth,29,typing on a keyboard
+stgcn,limb_occlusion_severe,new_error,149,53,point finger at the other person,30,pointing to something with finger
+stgcn,limb_occlusion_severe,new_error,145,31,taking a selfie,29,typing on a keyboard
+stgcn,limb_occlusion_severe,new_error,136,29,typing on a keyboard,11,writing
+stgcn,limb_occlusion_severe,new_error,132,0,drink water,29,typing on a keyboard
+stgcn,limb_occlusion_severe,new_error,131,32,check time (from watch),29,typing on a keyboard
+stgcn,limb_occlusion_severe,new_error,96,26,jump up,23,kicking something
+stgcn,limb_occlusion_severe,new_error,72,27,make a phone call/answer phone,29,typing on a keyboard
+stgcn,limb_occlusion_severe,new_error,66,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,limb_occlusion_severe,all_error,259,11,writing,29,typing on a keyboard
+stgcn,limb_occlusion_severe,all_error,248,2,brushing teeth,29,typing on a keyboard
+stgcn,limb_occlusion_severe,all_error,230,35,shake head,29,typing on a keyboard
+stgcn,limb_occlusion_severe,all_error,195,29,typing on a keyboard,11,writing
+stgcn,limb_occlusion_severe,all_error,178,1,eat meal/snack,29,typing on a keyboard
+stgcn,limb_occlusion_severe,all_error,154,31,taking a selfie,29,typing on a keyboard
+stgcn,limb_occlusion_severe,all_error,153,53,point finger at the other person,30,pointing to something with finger
+stgcn,limb_occlusion_severe,all_error,96,26,jump up,23,kicking something
+stgcn,limb_occlusion_severe,all_error,92,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,limb_occlusion_severe,all_error,83,27,make a phone call/answer phone,29,typing on a keyboard
+stgcn,coord_noise_severe,new_error,468,26,jump up,13,wear jacket
+stgcn,coord_noise_severe,new_error,431,3,brushing hair,11,writing
+stgcn,coord_noise_severe,new_error,429,13,wear jacket,11,writing
+stgcn,coord_noise_severe,new_error,409,54,hugging other person,13,wear jacket
+stgcn,coord_noise_severe,new_error,399,19,put on a hat/cap,11,writing
+stgcn,coord_noise_severe,new_error,263,51,pushing other person,13,wear jacket
+stgcn,coord_noise_severe,new_error,259,14,take off jacket,11,writing
+stgcn,coord_noise_severe,new_error,253,41,staggering,13,wear jacket
+stgcn,coord_noise_severe,new_error,252,14,take off jacket,13,wear jacket
+stgcn,coord_noise_severe,new_error,250,20,take off a hat/cap,11,writing
+stgcn,coord_noise_severe,all_error,468,26,jump up,13,wear jacket
+stgcn,coord_noise_severe,all_error,462,3,brushing hair,11,writing
+stgcn,coord_noise_severe,all_error,451,12,tear up paper,11,writing
+stgcn,coord_noise_severe,all_error,437,13,wear jacket,11,writing
+stgcn,coord_noise_severe,all_error,423,0,drink water,11,writing
+stgcn,coord_noise_severe,all_error,272,14,take off jacket,11,writing
+stgcn,coord_noise_severe,all_error,268,51,pushing other person,13,wear jacket
+stgcn,coord_noise_severe,all_error,264,54,hugging other person,13,wear jacket
+stgcn,coord_noise_severe,all_error,263,57,handshaking,11,writing
+stgcn,coord_noise_severe,all_error,263,55,giving something to other person,11,writing
+stgcn,frame_missing_severe,new_error,300,38,put the palms together,4,drop
+stgcn,frame_missing_severe,new_error,281,35,shake head,4,drop
+stgcn,frame_missing_severe,new_error,202,51,pushing other person,54,hugging other person
+stgcn,frame_missing_severe,new_error,191,31,taking a selfie,30,pointing to something with finger
+stgcn,frame_missing_severe,new_error,163,53,point finger at the other person,52,pat on back of other person
+stgcn,frame_missing_severe,new_error,147,57,handshaking,54,hugging other person
+stgcn,frame_missing_severe,new_error,136,32,check time (from watch),4,drop
+stgcn,frame_missing_severe,new_error,131,23,kicking something,4,drop
+stgcn,frame_missing_severe,new_error,115,56,touch other person's pocket,54,hugging other person
+stgcn,frame_missing_severe,new_error,79,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,frame_missing_severe,all_error,346,11,writing,29,typing on a keyboard
+stgcn,frame_missing_severe,all_error,316,38,put the palms together,4,drop
+stgcn,frame_missing_severe,all_error,295,35,shake head,4,drop
+stgcn,frame_missing_severe,all_error,206,31,taking a selfie,30,pointing to something with finger
+stgcn,frame_missing_severe,all_error,185,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,frame_missing_severe,all_error,182,53,point finger at the other person,52,pat on back of other person
+stgcn,frame_missing_severe,all_error,154,57,handshaking,54,hugging other person
+stgcn,frame_missing_severe,all_error,154,32,check time (from watch),4,drop
+stgcn,frame_missing_severe,all_error,150,51,pushing other person,54,hugging other person
+stgcn,frame_missing_severe,all_error,140,10,reading,29,typing on a keyboard
+stgcn,mixed_severe,new_error,139,58,walking towards each other,13,wear jacket
+stgcn,mixed_severe,new_error,133,35,shake head,29,typing on a keyboard
+stgcn,mixed_severe,new_error,104,12,tear up paper,11,writing
+stgcn,mixed_severe,new_error,103,45,touch back (backache),11,writing
+stgcn,mixed_severe,new_error,103,14,take off jacket,11,writing
+stgcn,mixed_severe,new_error,102,35,shake head,11,writing
+stgcn,mixed_severe,new_error,101,44,touch chest (stomachache/heart pain),11,writing
+stgcn,mixed_severe,new_error,100,24,reach into pocket,11,writing
+stgcn,mixed_severe,new_error,99,33,rub two hands together,11,writing
+stgcn,mixed_severe,new_error,99,28,playing with phone/tablet,11,writing
+stgcn,mixed_severe,all_error,209,10,reading,11,writing
+stgcn,mixed_severe,all_error,206,28,playing with phone/tablet,11,writing
+stgcn,mixed_severe,all_error,190,11,writing,29,typing on a keyboard
+stgcn,mixed_severe,all_error,184,10,reading,29,typing on a keyboard
+stgcn,mixed_severe,all_error,181,28,playing with phone/tablet,29,typing on a keyboard
+stgcn,mixed_severe,all_error,147,24,reach into pocket,29,typing on a keyboard
+stgcn,mixed_severe,all_error,139,58,walking towards each other,13,wear jacket
+stgcn,mixed_severe,all_error,117,33,rub two hands together,11,writing
+stgcn,mixed_severe,all_error,117,29,typing on a keyboard,11,writing
+stgcn,mixed_severe,all_error,116,24,reach into pocket,11,writing
+stgcnpp,clean,all_error,189,11,writing,29,typing on a keyboard
+stgcnpp,clean,all_error,175,15,wear a shoe,16,take off a shoe
+stgcnpp,clean,all_error,149,10,reading,11,writing
+stgcnpp,clean,all_error,111,30,pointing to something with finger,31,taking a selfie
+stgcnpp,clean,all_error,103,29,typing on a keyboard,11,writing
+stgcnpp,clean,all_error,95,10,reading,28,playing with phone/tablet
+stgcnpp,clean,all_error,88,11,writing,28,playing with phone/tablet
+stgcnpp,clean,all_error,75,28,playing with phone/tablet,11,writing
+stgcnpp,clean,all_error,64,16,take off a shoe,15,wear a shoe
+stgcnpp,clean,all_error,52,9,clapping,33,rub two hands together
+stgcnpp,joint_missing_mild,new_error,385,58,walking towards each other,59,walking apart from each other
+stgcnpp,joint_missing_mild,new_error,170,30,pointing to something with finger,31,taking a selfie
+stgcnpp,joint_missing_mild,new_error,155,51,pushing other person,54,hugging other person
+stgcnpp,joint_missing_mild,new_error,124,53,point finger at the other person,52,pat on back of other person
+stgcnpp,joint_missing_mild,new_error,107,28,playing with phone/tablet,11,writing
+stgcnpp,joint_missing_mild,new_error,103,35,shake head,28,playing with phone/tablet
+stgcnpp,joint_missing_mild,new_error,84,2,brushing teeth,0,drink water
+stgcnpp,joint_missing_mild,new_error,79,45,touch back (backache),44,touch chest (stomachache/heart pain)
+stgcnpp,joint_missing_mild,new_error,74,29,typing on a keyboard,11,writing
+stgcnpp,joint_missing_mild,new_error,72,50,kicking other person,14,take off jacket
+stgcnpp,joint_missing_mild,all_error,389,58,walking towards each other,59,walking apart from each other
+stgcnpp,joint_missing_mild,all_error,283,30,pointing to something with finger,31,taking a selfie
+stgcnpp,joint_missing_mild,all_error,180,28,playing with phone/tablet,11,writing
+stgcnpp,joint_missing_mild,all_error,173,10,reading,11,writing
+stgcnpp,joint_missing_mild,all_error,148,11,writing,29,typing on a keyboard
+stgcnpp,joint_missing_mild,all_error,129,53,point finger at the other person,52,pat on back of other person
+stgcnpp,joint_missing_mild,all_error,121,16,take off a shoe,15,wear a shoe
+stgcnpp,joint_missing_mild,all_error,117,29,typing on a keyboard,11,writing
+stgcnpp,joint_missing_mild,all_error,107,35,shake head,28,playing with phone/tablet
+stgcnpp,joint_missing_mild,all_error,105,51,pushing other person,54,hugging other person
+stgcnpp,limb_occlusion_mild,new_error,180,53,point finger at the other person,52,pat on back of other person
+stgcnpp,limb_occlusion_mild,new_error,108,15,wear a shoe,16,take off a shoe
+stgcnpp,limb_occlusion_mild,new_error,94,58,walking towards each other,59,walking apart from each other
+stgcnpp,limb_occlusion_mild,new_error,87,21,cheer up,22,hand waving
+stgcnpp,limb_occlusion_mild,new_error,77,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcnpp,limb_occlusion_mild,new_error,75,22,hand waving,35,shake head
+stgcnpp,limb_occlusion_mild,new_error,58,57,handshaking,52,pat on back of other person
+stgcnpp,limb_occlusion_mild,new_error,54,29,typing on a keyboard,11,writing
+stgcnpp,limb_occlusion_mild,new_error,52,55,giving something to other person,56,touch other person's pocket
+stgcnpp,limb_occlusion_mild,new_error,33,37,salute,35,shake head
+stgcnpp,limb_occlusion_mild,all_error,249,15,wear a shoe,16,take off a shoe
+stgcnpp,limb_occlusion_mild,all_error,203,53,point finger at the other person,52,pat on back of other person
+stgcnpp,limb_occlusion_mild,all_error,196,11,writing,29,typing on a keyboard
+stgcnpp,limb_occlusion_mild,all_error,174,29,typing on a keyboard,11,writing
+stgcnpp,limb_occlusion_mild,all_error,147,10,reading,11,writing
+stgcnpp,limb_occlusion_mild,all_error,110,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcnpp,limb_occlusion_mild,all_error,109,30,pointing to something with finger,31,taking a selfie
+stgcnpp,limb_occlusion_mild,all_error,72,58,walking towards each other,59,walking apart from each other
+stgcnpp,limb_occlusion_mild,all_error,42,11,writing,28,playing with phone/tablet
+stgcnpp,limb_occlusion_mild,all_error,38,10,reading,28,playing with phone/tablet
+stgcnpp,coord_noise_mild,new_error,349,35,shake head,37,salute
+stgcnpp,coord_noise_mild,new_error,148,6,throw,13,wear jacket
+stgcnpp,coord_noise_mild,new_error,144,35,shake head,53,point finger at the other person
+stgcnpp,coord_noise_mild,new_error,128,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,new_error,107,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,new_error,94,45,touch back (backache),24,reach into pocket
+stgcnpp,coord_noise_mild,new_error,86,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,new_error,84,0,drink water,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,new_error,83,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,new_error,81,51,pushing other person,59,walking apart from each other
+stgcnpp,coord_noise_mild,all_error,301,35,shake head,37,salute
+stgcnpp,coord_noise_mild,all_error,259,11,writing,29,typing on a keyboard
+stgcnpp,coord_noise_mild,all_error,173,6,throw,13,wear jacket
+stgcnpp,coord_noise_mild,all_error,135,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,all_error,114,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,all_error,113,28,playing with phone/tablet,11,writing
+stgcnpp,coord_noise_mild,all_error,103,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_mild,all_error,103,35,shake head,53,point finger at the other person
+stgcnpp,coord_noise_mild,all_error,97,10,reading,11,writing
+stgcnpp,coord_noise_mild,all_error,95,11,writing,28,playing with phone/tablet
+stgcnpp,frame_missing_mild,new_error,117,15,wear a shoe,16,take off a shoe
+stgcnpp,frame_missing_mild,new_error,46,27,make a phone call/answer phone,28,playing with phone/tablet
+stgcnpp,frame_missing_mild,new_error,37,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcnpp,frame_missing_mild,new_error,34,16,take off a shoe,23,kicking something
+stgcnpp,frame_missing_mild,new_error,26,29,typing on a keyboard,28,playing with phone/tablet
+stgcnpp,frame_missing_mild,new_error,26,46,touch neck (neckache),43,touch head (headache)
+stgcnpp,frame_missing_mild,new_error,26,11,writing,10,reading
+stgcnpp,frame_missing_mild,new_error,20,53,point finger at the other person,52,pat on back of other person
+stgcnpp,frame_missing_mild,new_error,19,45,touch back (backache),44,touch chest (stomachache/heart pain)
+stgcnpp,frame_missing_mild,new_error,17,41,staggering,23,kicking something
+stgcnpp,frame_missing_mild,all_error,246,15,wear a shoe,16,take off a shoe
+stgcnpp,frame_missing_mild,all_error,152,11,writing,29,typing on a keyboard
+stgcnpp,frame_missing_mild,all_error,135,10,reading,11,writing
+stgcnpp,frame_missing_mild,all_error,99,29,typing on a keyboard,11,writing
+stgcnpp,frame_missing_mild,all_error,95,16,take off a shoe,23,kicking something
+stgcnpp,frame_missing_mild,all_error,94,11,writing,28,playing with phone/tablet
+stgcnpp,frame_missing_mild,all_error,77,10,reading,28,playing with phone/tablet
+stgcnpp,frame_missing_mild,all_error,45,16,take off a shoe,15,wear a shoe
+stgcnpp,frame_missing_mild,all_error,43,11,writing,10,reading
+stgcnpp,frame_missing_mild,all_error,38,30,pointing to something with finger,31,taking a selfie
+stgcnpp,mixed_mild,new_error,185,51,pushing other person,54,hugging other person
+stgcnpp,mixed_mild,new_error,146,58,walking towards each other,59,walking apart from each other
+stgcnpp,mixed_mild,new_error,125,53,point finger at the other person,52,pat on back of other person
+stgcnpp,mixed_mild,new_error,104,49,punching/slapping other person,13,wear jacket
+stgcnpp,mixed_mild,new_error,90,6,throw,13,wear jacket
+stgcnpp,mixed_mild,new_error,85,30,pointing to something with finger,31,taking a selfie
+stgcnpp,mixed_mild,new_error,71,35,shake head,37,salute
+stgcnpp,mixed_mild,new_error,67,50,kicking other person,54,hugging other person
+stgcnpp,mixed_mild,new_error,65,49,punching/slapping other person,54,hugging other person
+stgcnpp,mixed_mild,new_error,65,28,playing with phone/tablet,29,typing on a keyboard
+stgcnpp,mixed_mild,all_error,211,11,writing,29,typing on a keyboard
+stgcnpp,mixed_mild,all_error,204,15,wear a shoe,16,take off a shoe
+stgcnpp,mixed_mild,all_error,193,51,pushing other person,54,hugging other person
+stgcnpp,mixed_mild,all_error,190,30,pointing to something with finger,31,taking a selfie
+stgcnpp,mixed_mild,all_error,148,58,walking towards each other,59,walking apart from each other
+stgcnpp,mixed_mild,all_error,97,10,reading,11,writing
+stgcnpp,mixed_mild,all_error,84,53,point finger at the other person,52,pat on back of other person
+stgcnpp,mixed_mild,all_error,77,29,typing on a keyboard,11,writing
+stgcnpp,mixed_mild,all_error,74,28,playing with phone/tablet,29,typing on a keyboard
+stgcnpp,mixed_mild,all_error,74,28,playing with phone/tablet,11,writing
+stgcnpp,joint_missing_moderate,new_error,301,34,nod head/bow,44,touch chest (stomachache/heart pain)
+stgcnpp,joint_missing_moderate,new_error,285,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_moderate,new_error,228,51,pushing other person,54,hugging other person
+stgcnpp,joint_missing_moderate,new_error,201,59,walking apart from each other,54,hugging other person
+stgcnpp,joint_missing_moderate,new_error,174,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_moderate,new_error,164,49,punching/slapping other person,54,hugging other person
+stgcnpp,joint_missing_moderate,new_error,162,2,brushing teeth,28,playing with phone/tablet
+stgcnpp,joint_missing_moderate,new_error,159,35,shake head,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_moderate,new_error,155,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_moderate,new_error,147,27,make a phone call/answer phone,28,playing with phone/tablet
+stgcnpp,joint_missing_moderate,all_error,313,28,playing with phone/tablet,29,typing on a keyboard
+stgcnpp,joint_missing_moderate,all_error,307,34,nod head/bow,44,touch chest (stomachache/heart pain)
+stgcnpp,joint_missing_moderate,all_error,235,51,pushing other person,54,hugging other person
+stgcnpp,joint_missing_moderate,all_error,202,59,walking apart from each other,54,hugging other person
+stgcnpp,joint_missing_moderate,all_error,185,2,brushing teeth,28,playing with phone/tablet
+stgcnpp,joint_missing_moderate,all_error,181,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_moderate,all_error,173,49,punching/slapping other person,54,hugging other person
+stgcnpp,joint_missing_moderate,all_error,173,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_moderate,all_error,172,10,reading,28,playing with phone/tablet
+stgcnpp,joint_missing_moderate,all_error,164,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,limb_occlusion_moderate,new_error,215,53,point finger at the other person,52,pat on back of other person
+stgcnpp,limb_occlusion_moderate,new_error,210,41,staggering,23,kicking something
+stgcnpp,limb_occlusion_moderate,new_error,186,21,cheer up,22,hand waving
+stgcnpp,limb_occlusion_moderate,new_error,164,58,walking towards each other,59,walking apart from each other
+stgcnpp,limb_occlusion_moderate,new_error,144,15,wear a shoe,16,take off a shoe
+stgcnpp,limb_occlusion_moderate,new_error,141,29,typing on a keyboard,11,writing
+stgcnpp,limb_occlusion_moderate,new_error,117,5,pickup,34,nod head/bow
+stgcnpp,limb_occlusion_moderate,new_error,95,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcnpp,limb_occlusion_moderate,new_error,54,5,pickup,16,take off a shoe
+stgcnpp,limb_occlusion_moderate,new_error,53,26,jump up,23,kicking something
+stgcnpp,limb_occlusion_moderate,all_error,248,15,wear a shoe,16,take off a shoe
+stgcnpp,limb_occlusion_moderate,all_error,230,53,point finger at the other person,52,pat on back of other person
+stgcnpp,limb_occlusion_moderate,all_error,225,29,typing on a keyboard,11,writing
+stgcnpp,limb_occlusion_moderate,all_error,210,41,staggering,23,kicking something
+stgcnpp,limb_occlusion_moderate,all_error,201,21,cheer up,22,hand waving
+stgcnpp,limb_occlusion_moderate,all_error,189,11,writing,29,typing on a keyboard
+stgcnpp,limb_occlusion_moderate,all_error,168,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcnpp,limb_occlusion_moderate,all_error,133,10,reading,11,writing
+stgcnpp,limb_occlusion_moderate,all_error,120,58,walking towards each other,59,walking apart from each other
+stgcnpp,limb_occlusion_moderate,all_error,69,5,pickup,34,nod head/bow
+stgcnpp,coord_noise_moderate,new_error,623,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,new_error,449,26,jump up,13,wear jacket
+stgcnpp,coord_noise_moderate,new_error,444,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,new_error,435,6,throw,13,wear jacket
+stgcnpp,coord_noise_moderate,new_error,416,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,new_error,385,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,new_error,373,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,new_error,242,55,giving something to other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,new_error,237,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,new_error,229,50,kicking other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,472,6,throw,13,wear jacket
+stgcnpp,coord_noise_moderate,all_error,468,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,456,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,449,26,jump up,13,wear jacket
+stgcnpp,coord_noise_moderate,all_error,434,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,419,0,drink water,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,417,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,415,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,409,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_moderate,all_error,264,55,giving something to other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,frame_missing_moderate,new_error,138,15,wear a shoe,16,take off a shoe
+stgcnpp,frame_missing_moderate,new_error,107,51,pushing other person,54,hugging other person
+stgcnpp,frame_missing_moderate,new_error,90,46,touch neck (neckache),43,touch head (headache)
+stgcnpp,frame_missing_moderate,new_error,83,27,make a phone call/answer phone,28,playing with phone/tablet
+stgcnpp,frame_missing_moderate,new_error,77,31,taking a selfie,30,pointing to something with finger
+stgcnpp,frame_missing_moderate,new_error,53,20,take off a hat/cap,37,salute
+stgcnpp,frame_missing_moderate,new_error,49,24,reach into pocket,45,touch back (backache)
+stgcnpp,frame_missing_moderate,new_error,37,41,staggering,23,kicking something
+stgcnpp,frame_missing_moderate,new_error,36,49,punching/slapping other person,50,kicking other person
+stgcnpp,frame_missing_moderate,new_error,33,16,take off a shoe,23,kicking something
+stgcnpp,frame_missing_moderate,all_error,232,15,wear a shoe,16,take off a shoe
+stgcnpp,frame_missing_moderate,all_error,173,11,writing,29,typing on a keyboard
+stgcnpp,frame_missing_moderate,all_error,137,10,reading,11,writing
+stgcnpp,frame_missing_moderate,all_error,121,15,wear a shoe,23,kicking something
+stgcnpp,frame_missing_moderate,all_error,117,46,touch neck (neckache),43,touch head (headache)
+stgcnpp,frame_missing_moderate,all_error,90,31,taking a selfie,30,pointing to something with finger
+stgcnpp,frame_missing_moderate,all_error,86,51,pushing other person,54,hugging other person
+stgcnpp,frame_missing_moderate,all_error,85,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+stgcnpp,frame_missing_moderate,all_error,82,16,take off a shoe,23,kicking something
+stgcnpp,frame_missing_moderate,all_error,44,11,writing,28,playing with phone/tablet
+stgcnpp,mixed_moderate,new_error,267,38,put the palms together,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,265,37,salute,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,218,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,187,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,174,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,166,0,drink water,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,161,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,157,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,110,25,hopping (one foot jumping),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,new_error,109,58,walking towards each other,13,wear jacket
+stgcnpp,mixed_moderate,all_error,289,0,drink water,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,276,37,salute,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,231,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,195,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,189,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,189,38,put the palms together,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,187,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,112,25,hopping (one foot jumping),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,111,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_moderate,all_error,109,58,walking towards each other,13,wear jacket
+stgcnpp,joint_missing_severe,new_error,352,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_severe,new_error,222,37,salute,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_severe,new_error,215,25,hopping (one foot jumping),36,wipe face
+stgcnpp,joint_missing_severe,new_error,212,51,pushing other person,54,hugging other person
+stgcnpp,joint_missing_severe,new_error,206,27,make a phone call/answer phone,28,playing with phone/tablet
+stgcnpp,joint_missing_severe,new_error,200,2,brushing teeth,28,playing with phone/tablet
+stgcnpp,joint_missing_severe,new_error,195,59,walking apart from each other,54,hugging other person
+stgcnpp,joint_missing_severe,new_error,192,58,walking towards each other,13,wear jacket
+stgcnpp,joint_missing_severe,new_error,190,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_severe,new_error,190,39,cross hands in front (say stop),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_severe,all_error,381,28,playing with phone/tablet,29,typing on a keyboard
+stgcnpp,joint_missing_severe,all_error,238,37,salute,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_severe,all_error,228,27,make a phone call/answer phone,28,playing with phone/tablet
+stgcnpp,joint_missing_severe,all_error,224,2,brushing teeth,28,playing with phone/tablet
+stgcnpp,joint_missing_severe,all_error,219,51,pushing other person,54,hugging other person
+stgcnpp,joint_missing_severe,all_error,217,25,hopping (one foot jumping),36,wipe face
+stgcnpp,joint_missing_severe,all_error,215,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_severe,all_error,209,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,joint_missing_severe,all_error,208,0,drink water,28,playing with phone/tablet
+stgcnpp,joint_missing_severe,all_error,206,10,reading,28,playing with phone/tablet
+stgcnpp,limb_occlusion_severe,new_error,260,21,cheer up,22,hand waving
+stgcnpp,limb_occlusion_severe,new_error,208,5,pickup,34,nod head/bow
+stgcnpp,limb_occlusion_severe,new_error,160,41,staggering,23,kicking something
+stgcnpp,limb_occlusion_severe,new_error,146,35,shake head,28,playing with phone/tablet
+stgcnpp,limb_occlusion_severe,new_error,141,26,jump up,23,kicking something
+stgcnpp,limb_occlusion_severe,new_error,130,57,handshaking,52,pat on back of other person
+stgcnpp,limb_occlusion_severe,new_error,123,39,cross hands in front (say stop),30,pointing to something with finger
+stgcnpp,limb_occlusion_severe,new_error,120,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,limb_occlusion_severe,new_error,96,42,falling,31,taking a selfie
+stgcnpp,limb_occlusion_severe,new_error,85,53,point finger at the other person,52,pat on back of other person
+stgcnpp,limb_occlusion_severe,all_error,276,21,cheer up,22,hand waving
+stgcnpp,limb_occlusion_severe,all_error,239,29,typing on a keyboard,11,writing
+stgcnpp,limb_occlusion_severe,all_error,219,11,writing,29,typing on a keyboard
+stgcnpp,limb_occlusion_severe,all_error,214,5,pickup,34,nod head/bow
+stgcnpp,limb_occlusion_severe,all_error,161,41,staggering,23,kicking something
+stgcnpp,limb_occlusion_severe,all_error,152,35,shake head,28,playing with phone/tablet
+stgcnpp,limb_occlusion_severe,all_error,132,15,wear a shoe,16,take off a shoe
+stgcnpp,limb_occlusion_severe,all_error,131,57,handshaking,52,pat on back of other person
+stgcnpp,limb_occlusion_severe,all_error,96,42,falling,31,taking a selfie
+stgcnpp,limb_occlusion_severe,all_error,87,53,point finger at the other person,52,pat on back of other person
+stgcnpp,coord_noise_severe,new_error,628,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,433,38,put the palms together,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,413,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,400,26,jump up,13,wear jacket
+stgcnpp,coord_noise_severe,new_error,256,25,hopping (one foot jumping),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,250,35,shake head,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,248,45,touch back (backache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,244,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,241,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,new_error,240,23,kicking something,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,679,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,456,38,put the palms together,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,433,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,426,28,playing with phone/tablet,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,263,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,261,45,touch back (backache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,261,35,shake head,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,259,25,hopping (one foot jumping),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,259,4,drop,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,coord_noise_severe,all_error,258,24,reach into pocket,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,frame_missing_severe,new_error,211,31,taking a selfie,30,pointing to something with finger
+stgcnpp,frame_missing_severe,new_error,197,53,point finger at the other person,58,walking towards each other
+stgcnpp,frame_missing_severe,new_error,185,51,pushing other person,54,hugging other person
+stgcnpp,frame_missing_severe,new_error,136,46,touch neck (neckache),43,touch head (headache)
+stgcnpp,frame_missing_severe,new_error,95,49,punching/slapping other person,54,hugging other person
+stgcnpp,frame_missing_severe,new_error,95,18,take off glasses,43,touch head (headache)
+stgcnpp,frame_missing_severe,new_error,80,52,pat on back of other person,54,hugging other person
+stgcnpp,frame_missing_severe,new_error,64,52,pat on back of other person,56,touch other person's pocket
+stgcnpp,frame_missing_severe,new_error,53,56,touch other person's pocket,54,hugging other person
+stgcnpp,frame_missing_severe,new_error,52,41,staggering,23,kicking something
+stgcnpp,frame_missing_severe,all_error,239,31,taking a selfie,30,pointing to something with finger
+stgcnpp,frame_missing_severe,all_error,205,53,point finger at the other person,58,walking towards each other
+stgcnpp,frame_missing_severe,all_error,190,51,pushing other person,54,hugging other person
+stgcnpp,frame_missing_severe,all_error,163,15,wear a shoe,16,take off a shoe
+stgcnpp,frame_missing_severe,all_error,159,46,touch neck (neckache),43,touch head (headache)
+stgcnpp,frame_missing_severe,all_error,133,11,writing,29,typing on a keyboard
+stgcnpp,frame_missing_severe,all_error,88,52,pat on back of other person,54,hugging other person
+stgcnpp,frame_missing_severe,all_error,69,52,pat on back of other person,56,touch other person's pocket
+stgcnpp,frame_missing_severe,all_error,61,49,punching/slapping other person,54,hugging other person
+stgcnpp,frame_missing_severe,all_error,58,24,reach into pocket,44,touch chest (stomachache/heart pain)
+stgcnpp,mixed_severe,new_error,253,38,put the palms together,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,new_error,205,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,new_error,184,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,new_error,167,19,put on a hat/cap,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,new_error,159,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,new_error,104,58,walking towards each other,13,wear jacket
+stgcnpp,mixed_severe,new_error,102,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,new_error,99,56,touch other person's pocket,54,hugging other person
+stgcnpp,mixed_severe,new_error,97,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,new_error,91,46,touch neck (neckache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,264,38,put the palms together,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,218,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,191,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,171,19,put on a hat/cap,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,110,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,108,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,104,58,walking towards each other,13,wear jacket
+stgcnpp,mixed_severe,all_error,102,56,touch other person's pocket,54,hugging other person
+stgcnpp,mixed_severe,all_error,101,46,touch neck (neckache),48,use a fan (with hand or paper)/feeling warm
+stgcnpp,mixed_severe,all_error,100,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,clean,all_error,150,11,writing,29,typing on a keyboard
+ctrgcn,clean,all_error,148,10,reading,11,writing
+ctrgcn,clean,all_error,118,15,wear a shoe,16,take off a shoe
+ctrgcn,clean,all_error,115,30,pointing to something with finger,31,taking a selfie
+ctrgcn,clean,all_error,106,29,typing on a keyboard,11,writing
+ctrgcn,clean,all_error,96,9,clapping,33,rub two hands together
+ctrgcn,clean,all_error,80,40,sneeze/cough,43,touch head (headache)
+ctrgcn,clean,all_error,63,11,writing,28,playing with phone/tablet
+ctrgcn,clean,all_error,54,16,take off a shoe,15,wear a shoe
+ctrgcn,clean,all_error,34,28,playing with phone/tablet,10,reading
+ctrgcn,joint_missing_mild,new_error,243,35,shake head,4,drop
+ctrgcn,joint_missing_mild,new_error,207,23,kicking something,4,drop
+ctrgcn,joint_missing_mild,new_error,183,52,pat on back of other person,53,point finger at the other person
+ctrgcn,joint_missing_mild,new_error,99,46,touch neck (neckache),43,touch head (headache)
+ctrgcn,joint_missing_mild,new_error,98,58,walking towards each other,59,walking apart from each other
+ctrgcn,joint_missing_mild,new_error,79,45,touch back (backache),44,touch chest (stomachache/heart pain)
+ctrgcn,joint_missing_mild,new_error,78,5,pickup,34,nod head/bow
+ctrgcn,joint_missing_mild,new_error,72,15,wear a shoe,16,take off a shoe
+ctrgcn,joint_missing_mild,new_error,65,28,playing with phone/tablet,10,reading
+ctrgcn,joint_missing_mild,new_error,62,55,giving something to other person,4,drop
+ctrgcn,joint_missing_mild,all_error,257,35,shake head,4,drop
+ctrgcn,joint_missing_mild,all_error,224,15,wear a shoe,16,take off a shoe
+ctrgcn,joint_missing_mild,all_error,205,52,pat on back of other person,53,point finger at the other person
+ctrgcn,joint_missing_mild,all_error,167,23,kicking something,4,drop
+ctrgcn,joint_missing_mild,all_error,150,28,playing with phone/tablet,10,reading
+ctrgcn,joint_missing_mild,all_error,122,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+ctrgcn,joint_missing_mild,all_error,100,58,walking towards each other,59,walking apart from each other
+ctrgcn,joint_missing_mild,all_error,95,11,writing,29,typing on a keyboard
+ctrgcn,joint_missing_mild,all_error,88,45,touch back (backache),44,touch chest (stomachache/heart pain)
+ctrgcn,joint_missing_mild,all_error,80,5,pickup,34,nod head/bow
+ctrgcn,limb_occlusion_mild,new_error,113,53,point finger at the other person,52,pat on back of other person
+ctrgcn,limb_occlusion_mild,new_error,88,22,hand waving,35,shake head
+ctrgcn,limb_occlusion_mild,new_error,82,21,cheer up,22,hand waving
+ctrgcn,limb_occlusion_mild,new_error,55,50,kicking other person,49,punching/slapping other person
+ctrgcn,limb_occlusion_mild,new_error,54,39,cross hands in front (say stop),37,salute
+ctrgcn,limb_occlusion_mild,new_error,53,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+ctrgcn,limb_occlusion_mild,new_error,49,37,salute,35,shake head
+ctrgcn,limb_occlusion_mild,new_error,47,30,pointing to something with finger,45,touch back (backache)
+ctrgcn,limb_occlusion_mild,new_error,36,10,reading,11,writing
+ctrgcn,limb_occlusion_mild,new_error,30,17,wear on glasses,1,eat meal/snack
+ctrgcn,limb_occlusion_mild,all_error,197,10,reading,11,writing
+ctrgcn,limb_occlusion_mild,all_error,189,11,writing,29,typing on a keyboard
+ctrgcn,limb_occlusion_mild,all_error,155,29,typing on a keyboard,11,writing
+ctrgcn,limb_occlusion_mild,all_error,151,15,wear a shoe,16,take off a shoe
+ctrgcn,limb_occlusion_mild,all_error,141,53,point finger at the other person,52,pat on back of other person
+ctrgcn,limb_occlusion_mild,all_error,127,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+ctrgcn,limb_occlusion_mild,all_error,86,28,playing with phone/tablet,11,writing
+ctrgcn,limb_occlusion_mild,all_error,68,22,hand waving,35,shake head
+ctrgcn,limb_occlusion_mild,all_error,45,11,writing,28,playing with phone/tablet
+ctrgcn,limb_occlusion_mild,all_error,37,10,reading,28,playing with phone/tablet
+ctrgcn,coord_noise_mild,new_error,291,52,pat on back of other person,53,point finger at the other person
+ctrgcn,coord_noise_mild,new_error,226,36,wipe face,43,touch head (headache)
+ctrgcn,coord_noise_mild,new_error,192,46,touch neck (neckache),43,touch head (headache)
+ctrgcn,coord_noise_mild,new_error,191,35,shake head,53,point finger at the other person
+ctrgcn,coord_noise_mild,new_error,189,33,rub two hands together,9,clapping
+ctrgcn,coord_noise_mild,new_error,162,35,shake head,34,nod head/bow
+ctrgcn,coord_noise_mild,new_error,128,35,shake head,37,salute
+ctrgcn,coord_noise_mild,new_error,111,38,put the palms together,9,clapping
+ctrgcn,coord_noise_mild,new_error,84,55,giving something to other person,57,handshaking
+ctrgcn,coord_noise_mild,new_error,84,29,typing on a keyboard,11,writing
+ctrgcn,coord_noise_mild,all_error,312,52,pat on back of other person,53,point finger at the other person
+ctrgcn,coord_noise_mild,all_error,254,36,wipe face,43,touch head (headache)
+ctrgcn,coord_noise_mild,all_error,222,10,reading,28,playing with phone/tablet
+ctrgcn,coord_noise_mild,all_error,208,33,rub two hands together,9,clapping
+ctrgcn,coord_noise_mild,all_error,196,35,shake head,53,point finger at the other person
+ctrgcn,coord_noise_mild,all_error,168,46,touch neck (neckache),43,touch head (headache)
+ctrgcn,coord_noise_mild,all_error,165,35,shake head,34,nod head/bow
+ctrgcn,coord_noise_mild,all_error,131,35,shake head,37,salute
+ctrgcn,coord_noise_mild,all_error,131,29,typing on a keyboard,11,writing
+ctrgcn,coord_noise_mild,all_error,106,11,writing,29,typing on a keyboard
+ctrgcn,frame_missing_mild,new_error,138,15,wear a shoe,16,take off a shoe
+ctrgcn,frame_missing_mild,new_error,68,11,writing,10,reading
+ctrgcn,frame_missing_mild,new_error,52,24,reach into pocket,4,drop
+ctrgcn,frame_missing_mild,new_error,41,46,touch neck (neckache),43,touch head (headache)
+ctrgcn,frame_missing_mild,new_error,36,11,writing,29,typing on a keyboard
+ctrgcn,frame_missing_mild,new_error,33,57,handshaking,55,giving something to other person
+ctrgcn,frame_missing_mild,new_error,31,32,check time (from watch),38,put the palms together
+ctrgcn,frame_missing_mild,new_error,30,16,take off a shoe,23,kicking something
+ctrgcn,frame_missing_mild,new_error,29,24,reach into pocket,45,touch back (backache)
+ctrgcn,frame_missing_mild,new_error,26,28,playing with phone/tablet,29,typing on a keyboard
+ctrgcn,frame_missing_mild,all_error,222,15,wear a shoe,16,take off a shoe
+ctrgcn,frame_missing_mild,all_error,175,11,writing,29,typing on a keyboard
+ctrgcn,frame_missing_mild,all_error,141,11,writing,10,reading
+ctrgcn,frame_missing_mild,all_error,93,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+ctrgcn,frame_missing_mild,all_error,91,10,reading,11,writing
+ctrgcn,frame_missing_mild,all_error,62,28,playing with phone/tablet,10,reading
+ctrgcn,frame_missing_mild,all_error,60,9,clapping,33,rub two hands together
+ctrgcn,frame_missing_mild,all_error,58,46,touch neck (neckache),43,touch head (headache)
+ctrgcn,frame_missing_mild,all_error,55,24,reach into pocket,4,drop
+ctrgcn,frame_missing_mild,all_error,42,28,playing with phone/tablet,29,typing on a keyboard
+ctrgcn,mixed_mild,new_error,140,23,kicking something,4,drop
+ctrgcn,mixed_mild,new_error,131,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_mild,new_error,113,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_mild,new_error,92,15,wear a shoe,16,take off a shoe
+ctrgcn,mixed_mild,new_error,90,35,shake head,4,drop
+ctrgcn,mixed_mild,new_error,88,58,walking towards each other,59,walking apart from each other
+ctrgcn,mixed_mild,new_error,82,52,pat on back of other person,53,point finger at the other person
+ctrgcn,mixed_mild,new_error,63,33,rub two hands together,9,clapping
+ctrgcn,mixed_mild,new_error,57,5,pickup,34,nod head/bow
+ctrgcn,mixed_mild,new_error,53,55,giving something to other person,4,drop
+ctrgcn,mixed_mild,all_error,189,15,wear a shoe,16,take off a shoe
+ctrgcn,mixed_mild,all_error,146,23,kicking something,4,drop
+ctrgcn,mixed_mild,all_error,145,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_mild,all_error,127,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_mild,all_error,110,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+ctrgcn,mixed_mild,all_error,90,58,walking towards each other,59,walking apart from each other
+ctrgcn,mixed_mild,all_error,73,33,rub two hands together,9,clapping
+ctrgcn,mixed_mild,all_error,64,29,typing on a keyboard,11,writing
+ctrgcn,mixed_mild,all_error,59,5,pickup,34,nod head/bow
+ctrgcn,mixed_mild,all_error,59,55,giving something to other person,4,drop
+ctrgcn,joint_missing_moderate,new_error,502,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,new_error,294,5,pickup,34,nod head/bow
+ctrgcn,joint_missing_moderate,new_error,291,23,kicking something,4,drop
+ctrgcn,joint_missing_moderate,new_error,281,22,hand waving,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,new_error,274,8,standing up (from sitting position),29,typing on a keyboard
+ctrgcn,joint_missing_moderate,new_error,190,41,staggering,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,new_error,190,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,new_error,185,7,sitting down,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,new_error,177,24,reach into pocket,29,typing on a keyboard
+ctrgcn,joint_missing_moderate,new_error,162,45,touch back (backache),29,typing on a keyboard
+ctrgcn,joint_missing_moderate,all_error,535,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,all_error,418,22,hand waving,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,all_error,298,5,pickup,34,nod head/bow
+ctrgcn,joint_missing_moderate,all_error,274,8,standing up (from sitting position),29,typing on a keyboard
+ctrgcn,joint_missing_moderate,all_error,202,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,all_error,193,24,reach into pocket,29,typing on a keyboard
+ctrgcn,joint_missing_moderate,all_error,190,41,staggering,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,all_error,188,7,sitting down,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_moderate,all_error,176,29,typing on a keyboard,28,playing with phone/tablet
+ctrgcn,joint_missing_moderate,all_error,171,23,kicking something,4,drop
+ctrgcn,limb_occlusion_moderate,new_error,224,21,cheer up,22,hand waving
+ctrgcn,limb_occlusion_moderate,new_error,184,53,point finger at the other person,52,pat on back of other person
+ctrgcn,limb_occlusion_moderate,new_error,162,41,staggering,23,kicking something
+ctrgcn,limb_occlusion_moderate,new_error,153,22,hand waving,35,shake head
+ctrgcn,limb_occlusion_moderate,new_error,104,39,cross hands in front (say stop),37,salute
+ctrgcn,limb_occlusion_moderate,new_error,102,50,kicking other person,49,punching/slapping other person
+ctrgcn,limb_occlusion_moderate,new_error,97,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,limb_occlusion_moderate,new_error,94,37,salute,35,shake head
+ctrgcn,limb_occlusion_moderate,new_error,87,9,clapping,22,hand waving
+ctrgcn,limb_occlusion_moderate,new_error,86,29,typing on a keyboard,11,writing
+ctrgcn,limb_occlusion_moderate,all_error,238,21,cheer up,22,hand waving
+ctrgcn,limb_occlusion_moderate,all_error,215,10,reading,11,writing
+ctrgcn,limb_occlusion_moderate,all_error,211,29,typing on a keyboard,11,writing
+ctrgcn,limb_occlusion_moderate,all_error,208,11,writing,29,typing on a keyboard
+ctrgcn,limb_occlusion_moderate,all_error,181,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+ctrgcn,limb_occlusion_moderate,all_error,151,53,point finger at the other person,52,pat on back of other person
+ctrgcn,limb_occlusion_moderate,all_error,109,41,staggering,23,kicking something
+ctrgcn,limb_occlusion_moderate,all_error,68,28,playing with phone/tablet,11,writing
+ctrgcn,limb_occlusion_moderate,all_error,61,15,wear a shoe,16,take off a shoe
+ctrgcn,limb_occlusion_moderate,all_error,60,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,381,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,336,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,330,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,322,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,316,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,242,59,walking apart from each other,36,wipe face
+ctrgcn,coord_noise_moderate,new_error,241,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,231,55,giving something to other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,211,14,take off jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,new_error,203,52,pat on back of other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,405,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,368,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,357,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,355,27,make a phone call/answer phone,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,348,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,250,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,248,59,walking apart from each other,36,wipe face
+ctrgcn,coord_noise_moderate,all_error,244,55,giving something to other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_moderate,all_error,230,28,playing with phone/tablet,29,typing on a keyboard
+ctrgcn,coord_noise_moderate,all_error,223,11,writing,29,typing on a keyboard
+ctrgcn,frame_missing_moderate,new_error,171,15,wear a shoe,16,take off a shoe
+ctrgcn,frame_missing_moderate,new_error,111,32,check time (from watch),38,put the palms together
+ctrgcn,frame_missing_moderate,new_error,90,46,touch neck (neckache),43,touch head (headache)
+ctrgcn,frame_missing_moderate,new_error,89,39,cross hands in front (say stop),38,put the palms together
+ctrgcn,frame_missing_moderate,new_error,86,51,pushing other person,54,hugging other person
+ctrgcn,frame_missing_moderate,new_error,77,56,touch other person's pocket,52,pat on back of other person
+ctrgcn,frame_missing_moderate,new_error,66,33,rub two hands together,9,clapping
+ctrgcn,frame_missing_moderate,new_error,59,3,brushing hair,21,cheer up
+ctrgcn,frame_missing_moderate,new_error,56,5,pickup,34,nod head/bow
+ctrgcn,frame_missing_moderate,new_error,52,11,writing,9,clapping
+ctrgcn,frame_missing_moderate,all_error,225,15,wear a shoe,16,take off a shoe
+ctrgcn,frame_missing_moderate,all_error,118,32,check time (from watch),38,put the palms together
+ctrgcn,frame_missing_moderate,all_error,105,46,touch neck (neckache),43,touch head (headache)
+ctrgcn,frame_missing_moderate,all_error,103,39,cross hands in front (say stop),38,put the palms together
+ctrgcn,frame_missing_moderate,all_error,86,33,rub two hands together,9,clapping
+ctrgcn,frame_missing_moderate,all_error,83,56,touch other person's pocket,52,pat on back of other person
+ctrgcn,frame_missing_moderate,all_error,81,11,writing,9,clapping
+ctrgcn,frame_missing_moderate,all_error,81,47,nausea or vomiting condition,44,touch chest (stomachache/heart pain)
+ctrgcn,frame_missing_moderate,all_error,61,10,reading,9,clapping
+ctrgcn,frame_missing_moderate,all_error,61,11,writing,29,typing on a keyboard
+ctrgcn,mixed_moderate,new_error,261,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,248,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,240,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,211,19,put on a hat/cap,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,210,0,drink water,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,202,52,pat on back of other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,197,51,pushing other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,136,58,walking towards each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,135,59,walking apart from each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,new_error,116,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,287,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,265,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,243,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,242,0,drink water,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,225,46,touch neck (neckache),48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,219,19,put on a hat/cap,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,140,59,walking apart from each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,136,58,walking towards each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,128,36,wipe face,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_moderate,all_error,127,2,brushing teeth,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,439,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,352,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,244,58,walking towards each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,238,37,salute,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,233,5,pickup,34,nod head/bow
+ctrgcn,joint_missing_severe,new_error,216,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,216,6,throw,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,211,7,sitting down,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,205,41,staggering,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,new_error,197,13,wear jacket,29,typing on a keyboard
+ctrgcn,joint_missing_severe,all_error,464,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,all_error,373,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,all_error,246,37,salute,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,all_error,244,58,walking towards each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,all_error,236,5,pickup,34,nod head/bow
+ctrgcn,joint_missing_severe,all_error,234,6,throw,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,all_error,224,29,typing on a keyboard,28,playing with phone/tablet
+ctrgcn,joint_missing_severe,all_error,219,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,joint_missing_severe,all_error,217,10,reading,28,playing with phone/tablet
+ctrgcn,joint_missing_severe,all_error,214,11,writing,28,playing with phone/tablet
+ctrgcn,limb_occlusion_severe,new_error,313,21,cheer up,22,hand waving
+ctrgcn,limb_occlusion_severe,new_error,218,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,limb_occlusion_severe,new_error,194,41,staggering,23,kicking something
+ctrgcn,limb_occlusion_severe,new_error,145,57,handshaking,52,pat on back of other person
+ctrgcn,limb_occlusion_severe,new_error,130,26,jump up,23,kicking something
+ctrgcn,limb_occlusion_severe,new_error,126,37,salute,35,shake head
+ctrgcn,limb_occlusion_severe,new_error,125,22,hand waving,35,shake head
+ctrgcn,limb_occlusion_severe,new_error,124,9,clapping,22,hand waving
+ctrgcn,limb_occlusion_severe,new_error,81,53,point finger at the other person,52,pat on back of other person
+ctrgcn,limb_occlusion_severe,new_error,79,35,shake head,28,playing with phone/tablet
+ctrgcn,limb_occlusion_severe,all_error,331,21,cheer up,22,hand waving
+ctrgcn,limb_occlusion_severe,all_error,251,29,typing on a keyboard,11,writing
+ctrgcn,limb_occlusion_severe,all_error,222,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,limb_occlusion_severe,all_error,206,11,writing,29,typing on a keyboard
+ctrgcn,limb_occlusion_severe,all_error,168,10,reading,11,writing
+ctrgcn,limb_occlusion_severe,all_error,140,9,clapping,22,hand waving
+ctrgcn,limb_occlusion_severe,all_error,137,37,salute,35,shake head
+ctrgcn,limb_occlusion_severe,all_error,137,22,hand waving,35,shake head
+ctrgcn,limb_occlusion_severe,all_error,87,53,point finger at the other person,52,pat on back of other person
+ctrgcn,limb_occlusion_severe,all_error,84,35,shake head,28,playing with phone/tablet
+ctrgcn,coord_noise_severe,new_error,413,13,wear jacket,36,wipe face
+ctrgcn,coord_noise_severe,new_error,268,58,walking towards each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,new_error,268,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,new_error,267,41,staggering,36,wipe face
+ctrgcn,coord_noise_severe,new_error,267,51,pushing other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,new_error,264,14,take off jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,new_error,263,41,staggering,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,new_error,263,25,hopping (one foot jumping),48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,new_error,262,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,new_error,261,50,kicking other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,276,55,giving something to other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,275,57,handshaking,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,275,52,pat on back of other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,275,51,pushing other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,274,56,touch other person's pocket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,274,53,point finger at the other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,274,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,273,50,kicking other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,271,49,punching/slapping other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,coord_noise_severe,all_error,271,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,frame_missing_severe,new_error,188,5,pickup,34,nod head/bow
+ctrgcn,frame_missing_severe,new_error,182,39,cross hands in front (say stop),38,put the palms together
+ctrgcn,frame_missing_severe,new_error,150,32,check time (from watch),38,put the palms together
+ctrgcn,frame_missing_severe,new_error,131,51,pushing other person,54,hugging other person
+ctrgcn,frame_missing_severe,new_error,103,0,drink water,2,brushing teeth
+ctrgcn,frame_missing_severe,new_error,96,3,brushing hair,21,cheer up
+ctrgcn,frame_missing_severe,new_error,87,42,falling,58,walking towards each other
+ctrgcn,frame_missing_severe,new_error,82,56,touch other person's pocket,58,walking towards each other
+ctrgcn,frame_missing_severe,new_error,78,41,staggering,58,walking towards each other
+ctrgcn,frame_missing_severe,new_error,78,7,sitting down,34,nod head/bow
+ctrgcn,frame_missing_severe,all_error,198,39,cross hands in front (say stop),38,put the palms together
+ctrgcn,frame_missing_severe,all_error,191,5,pickup,34,nod head/bow
+ctrgcn,frame_missing_severe,all_error,156,32,check time (from watch),38,put the palms together
+ctrgcn,frame_missing_severe,all_error,125,0,drink water,2,brushing teeth
+ctrgcn,frame_missing_severe,all_error,100,11,writing,9,clapping
+ctrgcn,frame_missing_severe,all_error,100,3,brushing hair,21,cheer up
+ctrgcn,frame_missing_severe,all_error,95,10,reading,9,clapping
+ctrgcn,frame_missing_severe,all_error,88,42,falling,58,walking towards each other
+ctrgcn,frame_missing_severe,all_error,85,56,touch other person's pocket,58,walking towards each other
+ctrgcn,frame_missing_severe,all_error,81,33,rub two hands together,9,clapping
+ctrgcn,mixed_severe,new_error,261,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,252,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,221,51,pushing other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,162,58,walking towards each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,142,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,138,59,walking apart from each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,135,8,standing up (from sitting position),48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,123,54,hugging other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,123,14,take off jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,new_error,122,41,staggering,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,275,3,brushing hair,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,264,13,wear jacket,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,234,0,drink water,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,227,43,touch head (headache),48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,227,51,pushing other person,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,162,58,walking towards each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,155,21,cheer up,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,145,59,walking apart from each other,48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,138,8,standing up (from sitting position),48,use a fan (with hand or paper)/feeling warm
+ctrgcn,mixed_severe,all_error,131,56,touch other person's pocket,48,use a fan (with hand or paper)/feeling warm
