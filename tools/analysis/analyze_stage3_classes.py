@@ -126,10 +126,26 @@ def main():
 
     for model in MODELS:
         model_report = {'conditions': {}}
+
+        # Clean reference: per-class accuracy averaged over all seeds, plus
+        # per-seed clean predictions for the paired new-error analysis.
+        clean_preds_by_seed = {}
+        clean_per_class_accs = []
+        for seed in args.seeds:
+            clean_pkl = root / model / 'clean' / 'seed{}'.format(seed) / 'result.pkl'
+            if not clean_pkl.is_file():
+                continue
+            clean_p = load_predictions(str(clean_pkl), labels.size)
+            clean_preds_by_seed[seed] = clean_p
+            clean_per_class_accs.append(class_accuracy(clean_p, labels, counts))
+        if clean_per_class_accs:
+            clean_acc = np.mean(clean_per_class_accs, axis=0)
+        else:
+            clean_acc = np.zeros(NUM_CLASSES)
+
         for condition in condition_list():
             # Collect per-seed predictions
             seed_preds = {}
-            seed_clean_correct = None
             for seed in args.seeds:
                 pkl = root / model / condition / 'seed{}'.format(seed) / 'result.pkl'
                 if not pkl.is_file():
@@ -139,15 +155,6 @@ def main():
 
             if not seed_preds:
                 continue
-
-            # Clean reference: use the first available seed's clean predictions
-            clean_pkl = root / model / 'clean' / 'seed{}'.format(
-                args.seeds[0]) / 'result.pkl'
-            if clean_pkl.is_file():
-                clean_preds = load_predictions(str(clean_pkl), labels.size)
-                clean_acc = class_accuracy(clean_preds, labels, counts)
-            else:
-                clean_acc = np.zeros(NUM_CLASSES)
 
             cond_report = dict(
                 seeds=list(seed_preds.keys()),
@@ -172,7 +179,7 @@ def main():
                         accuracy=round(float(acc[cid]), 4)))
 
             mean_acc = np.mean(per_class_accs, axis=0)
-            std_acc = np.std(per_class_accs, axis=0)
+            std_acc = np.std(per_class_accs, axis=0, ddof=1)
             drops = clean_acc - mean_acc
 
             for cid in range(NUM_CLASSES):
@@ -196,12 +203,18 @@ def main():
                 cond_report['top_drops'].append(record)
                 drop_rows.append(dict(model=model, condition=condition, **record))
 
-            # Confusion pairs: aggregate new-error and all-error across seeds
+            # Confusion pairs: aggregate new-error and all-error across seeds.
+            # new_error pairs each seed's degraded predictions against that
+            # SAME seed's clean predictions (paired), so a sample counts only
+            # when clean-correct and deg-wrong come from the same seed.
             for kind in ('new_error', 'all_error'):
                 agg_pairs = {}
                 for seed, preds in seed_preds.items():
                     if kind == 'new_error':
-                        mask = (clean_preds == labels) & (preds != labels)
+                        if seed not in clean_preds_by_seed:
+                            continue
+                        clean_p = clean_preds_by_seed[seed]
+                        mask = (clean_p == labels) & (preds != labels)
                     else:
                         mask = preds != labels
                     for cnt, tid, pid in top_pairs(labels, preds, mask, args.top_k):

@@ -8,9 +8,8 @@ under the requested degradation condition.  Degradation is applied in the test
 pipeline (seed 255, sample-level deterministic), so only the *checkpoint*
 varies across the seed dimension.
 
-This script extends ``run_moderate_robustness.py`` with a seed loop and a
-resumable manifest.  The original single-seed script is kept for archival
-reference.
+This script replaces the earlier single-seed ``run_moderate_robustness.py``
+(now removed) with a full seed loop and a resumable manifest.
 """
 
 import argparse

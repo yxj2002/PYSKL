@@ -151,7 +151,7 @@ def summarize(results, seeds):
             rows.append(dict(
                 model=model, condition=condition,
                 top1_mean=round(float(np.mean(top1s)), 2),
-                top1_std=round(float(np.std(top1s, ddof=0)), 2),
+                top1_std=round(float(np.std(top1s, ddof=1)), 2),
                 top1_min=round(float(np.min(top1s)), 2),
                 top1_max=round(float(np.max(top1s)), 2),
                 mean_class_accuracy_mean=round(float(np.mean(mcas)), 2),
@@ -175,7 +175,7 @@ def compute_mra(results, seeds):
         rows.append(dict(
             model=model,
             mra_mean=round(float(np.mean(mra_values)), 2) if mra_values else '',
-            mra_std=round(float(np.std(mra_values, ddof=0)), 2) if mra_values else '',
+            mra_std=round(float(np.std(mra_values, ddof=1)), 2) if mra_values else '',
             n_conditions=len(condition_list()),
             n_seeds=len(mra_values),
             per_seed={str(s): round(v, 2) for s, v in per_seed_mra.items()}))
