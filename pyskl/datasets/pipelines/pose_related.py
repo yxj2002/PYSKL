@@ -208,12 +208,16 @@ class RandomSkeletonDegrade:
     """Simulate low-quality skeletons for robustness evaluation.
 
     Supported degradation types are random joint missing, body-part occlusion,
-    coordinate noise, continuous frame missing and their mixture. The transform
-    expects ``results['keypoint']`` in ``M x T x V x C`` format. For
-    multi-clip evaluation it should be placed before ``UniformSample`` so one
-    physical frame receives one corruption that is shared by all sampled
-    clips. ``PreNormalize3D`` may still run first so missing frames are not
-    removed as empty input frames during normalization.
+    coordinate noise, continuous frame missing and their mixture, plus
+    ``random_single`` which picks one of the four single types per sample.
+    ``severity_sampling`` controls how the severity tier is chosen: ``'fixed'``
+    uses the ``severity`` argument as-is (evaluation), while ``'S3'`` /
+    ``'S5'`` draw mild/moderate/severe per sample uniformly or 3:3:1
+    (training-time augmentation). The transform expects ``results['keypoint']``
+    in ``M x T x V x C`` format. For multi-clip evaluation it should be placed
+    before ``UniformSample`` so one physical frame receives one corruption that
+    is shared by all sampled clips. ``PreNormalize3D`` may still run first so
+    missing frames are not removed as empty input frames during normalization.
     """
 
     _SEVERITY_PRESETS = {
@@ -233,6 +237,21 @@ class RandomSkeletonDegrade:
             coord_noise_sigma=0.1,
             frame_missing_ratio=0.4),
     }
+
+    # Sampling weights for training-time severity augmentation.  S3 draws
+    # mild/moderate/severe uniformly; S5 draws them 3:3:1 (matching the fixed
+    # frequency of test severity tiers).  Used only when ``severity_sampling``
+    # is not 'fixed'.
+    _SEVERITY_SAMPLING_WEIGHTS = {
+        'S3': {'mild': 1, 'moderate': 1, 'severe': 1},
+        'S5': {'mild': 3, 'moderate': 3, 'severe': 1},
+    }
+
+    # The four single degradation types, used by ``degrade_type='random_single'``
+    # to pick one corruption per sample at random.
+    _SINGLE_DEGRADE_TYPES = [
+        'joint_missing', 'limb_occlusion', 'coord_noise', 'frame_missing'
+    ]
 
     _PARTS = {
         'nturgb+d': {
@@ -265,6 +284,7 @@ class RandomSkeletonDegrade:
                  severity='moderate',
                  prob=1.0,
                  dataset='nturgb+d',
+                 severity_sampling='fixed',
                  coord_dims=None,
                  joint_missing_ratio=None,
                  num_occluded_parts=None,
@@ -277,13 +297,13 @@ class RandomSkeletonDegrade:
                  return_mask=False):
         assert degrade_type in [
             'joint_missing', 'limb_occlusion', 'coord_noise',
-            'frame_missing', 'mixed'
+            'frame_missing', 'mixed', 'random_single'
         ]
-        assert severity in self._SEVERITY_PRESETS
+        assert severity_sampling in ['fixed', 'S3', 'S5']
         assert 0 <= prob <= 1
         assert 0 <= mixed_apply_prob <= 1
         self.degrade_type = degrade_type
-        self.severity = severity
+        self.severity_sampling = severity_sampling
         self.prob = prob
         self.dataset = dataset
         self.coord_dims = coord_dims
@@ -295,15 +315,45 @@ class RandomSkeletonDegrade:
         self.seed = seed
         self.return_mask = return_mask
 
-        preset = self._SEVERITY_PRESETS[severity]
+        explicit = dict(
+            joint_missing_ratio=joint_missing_ratio,
+            num_occluded_parts=num_occluded_parts,
+            coord_noise_sigma=coord_noise_sigma,
+            frame_missing_ratio=frame_missing_ratio)
+        self._explicit = explicit
+        if severity_sampling == 'fixed':
+            assert severity in self._SEVERITY_PRESETS
+            self.severity = severity
+            self._apply_preset(self._SEVERITY_PRESETS[severity], explicit)
+        else:
+            # Severity is drawn per sample at call time; explicit ratio
+            # overrides would be silently ignored, so reject them upfront.
+            for key, value in explicit.items():
+                assert value is None, (
+                    '{} must not be set when severity_sampling={}'.format(
+                        key, severity_sampling))
+            self.severity = None
+            self.joint_missing_ratio = None
+            self.num_occluded_parts = None
+            self.coord_noise_sigma = None
+            self.frame_missing_ratio = None
+
+    def _apply_preset(self, preset, explicit):
         self.joint_missing_ratio = self._get_value(
-            joint_missing_ratio, preset['joint_missing_ratio'])
+            explicit['joint_missing_ratio'], preset['joint_missing_ratio'])
         self.num_occluded_parts = self._get_value(
-            num_occluded_parts, preset['num_occluded_parts'])
+            explicit['num_occluded_parts'], preset['num_occluded_parts'])
         self.coord_noise_sigma = self._get_value(
-            coord_noise_sigma, preset['coord_noise_sigma'])
+            explicit['coord_noise_sigma'], preset['coord_noise_sigma'])
         self.frame_missing_ratio = self._get_value(
-            frame_missing_ratio, preset['frame_missing_ratio'])
+            explicit['frame_missing_ratio'], preset['frame_missing_ratio'])
+
+    def _sample_severity(self, rng):
+        weights = self._SEVERITY_SAMPLING_WEIGHTS[self.severity_sampling]
+        names = list(weights.keys())
+        probs = np.asarray([weights[n] for n in names], dtype=np.float64)
+        probs = probs / probs.sum()
+        return names[int(rng.choice(len(names), p=probs))]
 
     @staticmethod
     def _get_value(value, default):
@@ -426,6 +476,12 @@ class RandomSkeletonDegrade:
         if rng.rand() >= self.prob:
             return results
 
+        # Draw severity per sample when augmentation-style sampling is on.
+        if self.severity_sampling != 'fixed':
+            severity = self._sample_severity(rng)
+            self._apply_preset(self._SEVERITY_PRESETS[severity], self._explicit)
+            self.severity = severity
+
         results['keypoint'] = results['keypoint'].copy()
         if 'keypoint_score' in results:
             results['keypoint_score'] = results['keypoint_score'].copy()
@@ -442,6 +498,10 @@ class RandomSkeletonDegrade:
             for item in applied:
                 degrade_mask |= self._apply_one(item, results, rng, coord_dims)
             results['degrade_types'] = [str(item) for item in applied]
+        elif self.degrade_type == 'random_single':
+            chosen = rng.choice(self._SINGLE_DEGRADE_TYPES)
+            degrade_mask = self._apply_one(chosen, results, rng, coord_dims)
+            results['degrade_types'] = [str(chosen)]
         else:
             degrade_mask = self._apply_one(
                 self.degrade_type, results, rng, coord_dims)
