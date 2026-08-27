@@ -229,6 +229,7 @@ def render_test_config(degrade_type, severity, ann_file, work_dir):
 
     config = (
         header +
+        MODEL_DEF +
         "dataset_type = 'PoseDataset'\n"
         "ann_file = '{ann_file}'\n"
         "test_pipeline = [\n"

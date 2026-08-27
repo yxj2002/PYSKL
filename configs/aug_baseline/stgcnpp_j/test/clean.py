@@ -1,4 +1,13 @@
 # clean (no degradation) test on inner_val
+model = dict(
+    type='RecognizerGCN',
+    backbone=dict(
+        type='STGCN',
+        gcn_adaptive='init',
+        gcn_with_res=True,
+        tcn_type='mstcn',
+        graph_cfg=dict(layout='nturgb+d', mode='spatial')),
+    cls_head=dict(type='GCNHead', num_classes=60, in_channels=256))
 dataset_type = 'PoseDataset'
 ann_file = 'data/nturgbd/ntu60_inner_split.pkl'
 test_pipeline = [
