@@ -1,0 +1,773 @@
+{
+  "results_root": "G:\\AllProjects\\pythonProjects\\pyskl-main\\pyskl-main\\work_dirs\\aug_baseline\\stgcnpp_j\\results",
+  "groups": [
+    "A0",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+  ],
+  "num_conditions": 16,
+  "summary": [
+    {
+      "group": "A0",
+      "condition": "clean",
+      "top1": 90.53,
+      "mean_class_accuracy": 90.52
+    },
+    {
+      "group": "A0",
+      "condition": "joint_missing_mild",
+      "top1": 70.81,
+      "mean_class_accuracy": 70.84
+    },
+    {
+      "group": "A0",
+      "condition": "limb_occlusion_mild",
+      "top1": 76.46,
+      "mean_class_accuracy": 76.48
+    },
+    {
+      "group": "A0",
+      "condition": "coord_noise_mild",
+      "top1": 63.09,
+      "mean_class_accuracy": 63.12
+    },
+    {
+      "group": "A0",
+      "condition": "frame_missing_mild",
+      "top1": 85.61,
+      "mean_class_accuracy": 85.6
+    },
+    {
+      "group": "A0",
+      "condition": "mixed_mild",
+      "top1": 53.28,
+      "mean_class_accuracy": 53.31
+    },
+    {
+      "group": "A0",
+      "condition": "joint_missing_moderate",
+      "top1": 19.68,
+      "mean_class_accuracy": 19.68
+    },
+    {
+      "group": "A0",
+      "condition": "limb_occlusion_moderate",
+      "top1": 57.66,
+      "mean_class_accuracy": 57.67
+    },
+    {
+      "group": "A0",
+      "condition": "coord_noise_moderate",
+      "top1": 18.17,
+      "mean_class_accuracy": 18.2
+    },
+    {
+      "group": "A0",
+      "condition": "frame_missing_moderate",
+      "top1": 76.76,
+      "mean_class_accuracy": 76.75
+    },
+    {
+      "group": "A0",
+      "condition": "mixed_moderate",
+      "top1": 20.43,
+      "mean_class_accuracy": 20.43
+    },
+    {
+      "group": "A0",
+      "condition": "joint_missing_severe",
+      "top1": 5.33,
+      "mean_class_accuracy": 5.33
+    },
+    {
+      "group": "A0",
+      "condition": "limb_occlusion_severe",
+      "top1": 35.12,
+      "mean_class_accuracy": 35.13
+    },
+    {
+      "group": "A0",
+      "condition": "coord_noise_severe",
+      "top1": 5.95,
+      "mean_class_accuracy": 5.95
+    },
+    {
+      "group": "A0",
+      "condition": "frame_missing_severe",
+      "top1": 63.09,
+      "mean_class_accuracy": 63.1
+    },
+    {
+      "group": "A0",
+      "condition": "mixed_severe",
+      "top1": 11.88,
+      "mean_class_accuracy": 11.89
+    },
+    {
+      "group": "A1",
+      "condition": "clean",
+      "top1": 89.22,
+      "mean_class_accuracy": 89.22
+    },
+    {
+      "group": "A1",
+      "condition": "joint_missing_mild",
+      "top1": 89.52,
+      "mean_class_accuracy": 89.52
+    },
+    {
+      "group": "A1",
+      "condition": "limb_occlusion_mild",
+      "top1": 78.6,
+      "mean_class_accuracy": 78.61
+    },
+    {
+      "group": "A1",
+      "condition": "coord_noise_mild",
+      "top1": 69.0,
+      "mean_class_accuracy": 69.0
+    },
+    {
+      "group": "A1",
+      "condition": "frame_missing_mild",
+      "top1": 88.31,
+      "mean_class_accuracy": 88.32
+    },
+    {
+      "group": "A1",
+      "condition": "mixed_mild",
+      "top1": 70.2,
+      "mean_class_accuracy": 70.19
+    },
+    {
+      "group": "A1",
+      "condition": "joint_missing_moderate",
+      "top1": 89.43,
+      "mean_class_accuracy": 89.43
+    },
+    {
+      "group": "A1",
+      "condition": "limb_occlusion_moderate",
+      "top1": 61.74,
+      "mean_class_accuracy": 61.72
+    },
+    {
+      "group": "A1",
+      "condition": "coord_noise_moderate",
+      "top1": 26.32,
+      "mean_class_accuracy": 26.34
+    },
+    {
+      "group": "A1",
+      "condition": "frame_missing_moderate",
+      "top1": 78.99,
+      "mean_class_accuracy": 78.99
+    },
+    {
+      "group": "A1",
+      "condition": "mixed_moderate",
+      "top1": 40.64,
+      "mean_class_accuracy": 40.65
+    },
+    {
+      "group": "A1",
+      "condition": "joint_missing_severe",
+      "top1": 88.87,
+      "mean_class_accuracy": 88.87
+    },
+    {
+      "group": "A1",
+      "condition": "limb_occlusion_severe",
+      "top1": 39.21,
+      "mean_class_accuracy": 39.19
+    },
+    {
+      "group": "A1",
+      "condition": "coord_noise_severe",
+      "top1": 10.01,
+      "mean_class_accuracy": 10.03
+    },
+    {
+      "group": "A1",
+      "condition": "frame_missing_severe",
+      "top1": 66.44,
+      "mean_class_accuracy": 66.45
+    },
+    {
+      "group": "A1",
+      "condition": "mixed_severe",
+      "top1": 26.77,
+      "mean_class_accuracy": 26.77
+    },
+    {
+      "group": "A2",
+      "condition": "clean",
+      "top1": 91.06,
+      "mean_class_accuracy": 91.07
+    },
+    {
+      "group": "A2",
+      "condition": "joint_missing_mild",
+      "top1": 73.73,
+      "mean_class_accuracy": 73.74
+    },
+    {
+      "group": "A2",
+      "condition": "limb_occlusion_mild",
+      "top1": 88.16,
+      "mean_class_accuracy": 88.17
+    },
+    {
+      "group": "A2",
+      "condition": "coord_noise_mild",
+      "top1": 53.43,
+      "mean_class_accuracy": 53.43
+    },
+    {
+      "group": "A2",
+      "condition": "frame_missing_mild",
+      "top1": 83.74,
+      "mean_class_accuracy": 83.73
+    },
+    {
+      "group": "A2",
+      "condition": "mixed_mild",
+      "top1": 54.59,
+      "mean_class_accuracy": 54.58
+    },
+    {
+      "group": "A2",
+      "condition": "joint_missing_moderate",
+      "top1": 14.41,
+      "mean_class_accuracy": 14.4
+    },
+    {
+      "group": "A2",
+      "condition": "limb_occlusion_moderate",
+      "top1": 83.74,
+      "mean_class_accuracy": 83.76
+    },
+    {
+      "group": "A2",
+      "condition": "coord_noise_moderate",
+      "top1": 11.69,
+      "mean_class_accuracy": 11.68
+    },
+    {
+      "group": "A2",
+      "condition": "frame_missing_moderate",
+      "top1": 73.0,
+      "mean_class_accuracy": 72.98
+    },
+    {
+      "group": "A2",
+      "condition": "mixed_moderate",
+      "top1": 23.31,
+      "mean_class_accuracy": 23.29
+    },
+    {
+      "group": "A2",
+      "condition": "joint_missing_severe",
+      "top1": 2.23,
+      "mean_class_accuracy": 2.24
+    },
+    {
+      "group": "A2",
+      "condition": "limb_occlusion_severe",
+      "top1": 76.78,
+      "mean_class_accuracy": 76.81
+    },
+    {
+      "group": "A2",
+      "condition": "coord_noise_severe",
+      "top1": 4.77,
+      "mean_class_accuracy": 4.76
+    },
+    {
+      "group": "A2",
+      "condition": "frame_missing_severe",
+      "top1": 59.27,
+      "mean_class_accuracy": 59.26
+    },
+    {
+      "group": "A2",
+      "condition": "mixed_severe",
+      "top1": 16.37,
+      "mean_class_accuracy": 16.37
+    },
+    {
+      "group": "A3",
+      "condition": "clean",
+      "top1": 85.71,
+      "mean_class_accuracy": 85.72
+    },
+    {
+      "group": "A3",
+      "condition": "joint_missing_mild",
+      "top1": 82.36,
+      "mean_class_accuracy": 82.37
+    },
+    {
+      "group": "A3",
+      "condition": "limb_occlusion_mild",
+      "top1": 66.29,
+      "mean_class_accuracy": 66.29
+    },
+    {
+      "group": "A3",
+      "condition": "coord_noise_mild",
+      "top1": 85.26,
+      "mean_class_accuracy": 85.27
+    },
+    {
+      "group": "A3",
+      "condition": "frame_missing_mild",
+      "top1": 80.49,
+      "mean_class_accuracy": 80.49
+    },
+    {
+      "group": "A3",
+      "condition": "mixed_mild",
+      "top1": 70.08,
+      "mean_class_accuracy": 70.08
+    },
+    {
+      "group": "A3",
+      "condition": "joint_missing_moderate",
+      "top1": 69.84,
+      "mean_class_accuracy": 69.84
+    },
+    {
+      "group": "A3",
+      "condition": "limb_occlusion_moderate",
+      "top1": 41.72,
+      "mean_class_accuracy": 41.72
+    },
+    {
+      "group": "A3",
+      "condition": "coord_noise_moderate",
+      "top1": 83.85,
+      "mean_class_accuracy": 83.85
+    },
+    {
+      "group": "A3",
+      "condition": "frame_missing_moderate",
+      "top1": 71.58,
+      "mean_class_accuracy": 71.57
+    },
+    {
+      "group": "A3",
+      "condition": "mixed_moderate",
+      "top1": 47.43,
+      "mean_class_accuracy": 47.43
+    },
+    {
+      "group": "A3",
+      "condition": "joint_missing_severe",
+      "top1": 46.62,
+      "mean_class_accuracy": 46.64
+    },
+    {
+      "group": "A3",
+      "condition": "limb_occlusion_severe",
+      "top1": 19.57,
+      "mean_class_accuracy": 19.57
+    },
+    {
+      "group": "A3",
+      "condition": "coord_noise_severe",
+      "top1": 80.79,
+      "mean_class_accuracy": 80.81
+    },
+    {
+      "group": "A3",
+      "condition": "frame_missing_severe",
+      "top1": 59.91,
+      "mean_class_accuracy": 59.91
+    },
+    {
+      "group": "A3",
+      "condition": "mixed_severe",
+      "top1": 29.19,
+      "mean_class_accuracy": 29.2
+    },
+    {
+      "group": "A4",
+      "condition": "clean",
+      "top1": 86.75,
+      "mean_class_accuracy": 86.74
+    },
+    {
+      "group": "A4",
+      "condition": "joint_missing_mild",
+      "top1": 64.83,
+      "mean_class_accuracy": 64.78
+    },
+    {
+      "group": "A4",
+      "condition": "limb_occlusion_mild",
+      "top1": 71.15,
+      "mean_class_accuracy": 71.14
+    },
+    {
+      "group": "A4",
+      "condition": "coord_noise_mild",
+      "top1": 61.95,
+      "mean_class_accuracy": 61.93
+    },
+    {
+      "group": "A4",
+      "condition": "frame_missing_mild",
+      "top1": 89.84,
+      "mean_class_accuracy": 89.83
+    },
+    {
+      "group": "A4",
+      "condition": "mixed_mild",
+      "top1": 57.72,
+      "mean_class_accuracy": 57.71
+    },
+    {
+      "group": "A4",
+      "condition": "joint_missing_moderate",
+      "top1": 27.86,
+      "mean_class_accuracy": 27.85
+    },
+    {
+      "group": "A4",
+      "condition": "limb_occlusion_moderate",
+      "top1": 51.3,
+      "mean_class_accuracy": 51.29
+    },
+    {
+      "group": "A4",
+      "condition": "coord_noise_moderate",
+      "top1": 17.83,
+      "mean_class_accuracy": 17.81
+    },
+    {
+      "group": "A4",
+      "condition": "frame_missing_moderate",
+      "top1": 89.17,
+      "mean_class_accuracy": 89.17
+    },
+    {
+      "group": "A4",
+      "condition": "mixed_moderate",
+      "top1": 26.81,
+      "mean_class_accuracy": 26.81
+    },
+    {
+      "group": "A4",
+      "condition": "joint_missing_severe",
+      "top1": 10.74,
+      "mean_class_accuracy": 10.72
+    },
+    {
+      "group": "A4",
+      "condition": "limb_occlusion_severe",
+      "top1": 29.07,
+      "mean_class_accuracy": 29.07
+    },
+    {
+      "group": "A4",
+      "condition": "coord_noise_severe",
+      "top1": 6.36,
+      "mean_class_accuracy": 6.35
+    },
+    {
+      "group": "A4",
+      "condition": "frame_missing_severe",
+      "top1": 87.05,
+      "mean_class_accuracy": 87.04
+    },
+    {
+      "group": "A4",
+      "condition": "mixed_severe",
+      "top1": 16.54,
+      "mean_class_accuracy": 16.54
+    },
+    {
+      "group": "A5",
+      "condition": "clean",
+      "top1": 90.2,
+      "mean_class_accuracy": 90.2
+    },
+    {
+      "group": "A5",
+      "condition": "joint_missing_mild",
+      "top1": 89.54,
+      "mean_class_accuracy": 89.54
+    },
+    {
+      "group": "A5",
+      "condition": "limb_occlusion_mild",
+      "top1": 86.68,
+      "mean_class_accuracy": 86.69
+    },
+    {
+      "group": "A5",
+      "condition": "coord_noise_mild",
+      "top1": 88.44,
+      "mean_class_accuracy": 88.45
+    },
+    {
+      "group": "A5",
+      "condition": "frame_missing_mild",
+      "top1": 89.73,
+      "mean_class_accuracy": 89.73
+    },
+    {
+      "group": "A5",
+      "condition": "mixed_mild",
+      "top1": 86.7,
+      "mean_class_accuracy": 86.71
+    },
+    {
+      "group": "A5",
+      "condition": "joint_missing_moderate",
+      "top1": 89.24,
+      "mean_class_accuracy": 89.23
+    },
+    {
+      "group": "A5",
+      "condition": "limb_occlusion_moderate",
+      "top1": 81.87,
+      "mean_class_accuracy": 81.88
+    },
+    {
+      "group": "A5",
+      "condition": "coord_noise_moderate",
+      "top1": 85.61,
+      "mean_class_accuracy": 85.62
+    },
+    {
+      "group": "A5",
+      "condition": "frame_missing_moderate",
+      "top1": 88.66,
+      "mean_class_accuracy": 88.66
+    },
+    {
+      "group": "A5",
+      "condition": "mixed_moderate",
+      "top1": 78.39,
+      "mean_class_accuracy": 78.4
+    },
+    {
+      "group": "A5",
+      "condition": "joint_missing_severe",
+      "top1": 88.25,
+      "mean_class_accuracy": 88.25
+    },
+    {
+      "group": "A5",
+      "condition": "limb_occlusion_severe",
+      "top1": 72.72,
+      "mean_class_accuracy": 72.74
+    },
+    {
+      "group": "A5",
+      "condition": "coord_noise_severe",
+      "top1": 80.79,
+      "mean_class_accuracy": 80.81
+    },
+    {
+      "group": "A5",
+      "condition": "frame_missing_severe",
+      "top1": 85.82,
+      "mean_class_accuracy": 85.82
+    },
+    {
+      "group": "A5",
+      "condition": "mixed_severe",
+      "top1": 61.63,
+      "mean_class_accuracy": 61.64
+    },
+    {
+      "group": "A6",
+      "condition": "clean",
+      "top1": 89.84,
+      "mean_class_accuracy": 89.84
+    },
+    {
+      "group": "A6",
+      "condition": "joint_missing_mild",
+      "top1": 89.8,
+      "mean_class_accuracy": 89.8
+    },
+    {
+      "group": "A6",
+      "condition": "limb_occlusion_mild",
+      "top1": 86.1,
+      "mean_class_accuracy": 86.11
+    },
+    {
+      "group": "A6",
+      "condition": "coord_noise_mild",
+      "top1": 88.42,
+      "mean_class_accuracy": 88.43
+    },
+    {
+      "group": "A6",
+      "condition": "frame_missing_mild",
+      "top1": 89.13,
+      "mean_class_accuracy": 89.14
+    },
+    {
+      "group": "A6",
+      "condition": "mixed_mild",
+      "top1": 86.66,
+      "mean_class_accuracy": 86.67
+    },
+    {
+      "group": "A6",
+      "condition": "joint_missing_moderate",
+      "top1": 89.28,
+      "mean_class_accuracy": 89.29
+    },
+    {
+      "group": "A6",
+      "condition": "limb_occlusion_moderate",
+      "top1": 80.67,
+      "mean_class_accuracy": 80.69
+    },
+    {
+      "group": "A6",
+      "condition": "coord_noise_moderate",
+      "top1": 86.19,
+      "mean_class_accuracy": 86.2
+    },
+    {
+      "group": "A6",
+      "condition": "frame_missing_moderate",
+      "top1": 87.65,
+      "mean_class_accuracy": 87.65
+    },
+    {
+      "group": "A6",
+      "condition": "mixed_moderate",
+      "top1": 80.79,
+      "mean_class_accuracy": 80.81
+    },
+    {
+      "group": "A6",
+      "condition": "joint_missing_severe",
+      "top1": 88.64,
+      "mean_class_accuracy": 88.64
+    },
+    {
+      "group": "A6",
+      "condition": "limb_occlusion_severe",
+      "top1": 72.01,
+      "mean_class_accuracy": 72.04
+    },
+    {
+      "group": "A6",
+      "condition": "coord_noise_severe",
+      "top1": 82.53,
+      "mean_class_accuracy": 82.55
+    },
+    {
+      "group": "A6",
+      "condition": "frame_missing_severe",
+      "top1": 85.35,
+      "mean_class_accuracy": 85.35
+    },
+    {
+      "group": "A6",
+      "condition": "mixed_severe",
+      "top1": 71.36,
+      "mean_class_accuracy": 71.38
+    }
+  ],
+  "mra": [
+    {
+      "group": "A0",
+      "mra": 47.12,
+      "clean": 90.53,
+      "gap_vs_clean": 43.41,
+      "n_conditions": 16
+    },
+    {
+      "group": "A1",
+      "mra": 63.33,
+      "clean": 89.22,
+      "gap_vs_clean": 25.89,
+      "n_conditions": 16
+    },
+    {
+      "group": "A2",
+      "mra": 50.64,
+      "clean": 91.06,
+      "gap_vs_clean": 40.42,
+      "n_conditions": 16
+    },
+    {
+      "group": "A3",
+      "mra": 63.79,
+      "clean": 85.71,
+      "gap_vs_clean": 21.92,
+      "n_conditions": 16
+    },
+    {
+      "group": "A4",
+      "mra": 49.69,
+      "clean": 86.75,
+      "gap_vs_clean": 37.06,
+      "n_conditions": 16
+    },
+    {
+      "group": "A5",
+      "mra": 84.02,
+      "clean": 90.2,
+      "gap_vs_clean": 6.18,
+      "n_conditions": 16
+    },
+    {
+      "group": "A6",
+      "mra": 84.65,
+      "clean": 89.84,
+      "gap_vs_clean": 5.19,
+      "n_conditions": 16
+    }
+  ],
+  "overfit": [
+    {
+      "group": "A1",
+      "matched_degradation": "joint_missing",
+      "gain_on_matched": 57.33,
+      "gain_on_others_mean": 7.39,
+      "gain_on_clean": -1.31,
+      "overfit_margin": 49.94
+    },
+    {
+      "group": "A2",
+      "matched_degradation": "limb_occlusion",
+      "gain_on_matched": 26.48,
+      "gain_on_others_mean": -1.96,
+      "gain_on_clean": 0.53,
+      "overfit_margin": 28.44
+    },
+    {
+      "group": "A3",
+      "matched_degradation": "coord_noise",
+      "gain_on_matched": 54.23,
+      "gain_on_others_mean": 9.08,
+      "gain_on_clean": -4.82,
+      "overfit_margin": 45.15
+    },
+    {
+      "group": "A4",
+      "matched_degradation": "frame_missing",
+      "gain_on_matched": 13.53,
+      "gain_on_others_mean": 0.36,
+      "gain_on_clean": -3.78,
+      "overfit_margin": 13.18
+    }
+  ],
+  "missing": []
+}

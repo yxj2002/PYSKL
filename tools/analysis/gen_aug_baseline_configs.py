@@ -279,8 +279,12 @@ def main():
             tag = degrade_type or 'clean'
             fname = train_filename(
                 group, tag, args.prob, args.severity_sampling, args.epochs)
-            work_dir = './work_dirs/aug_baseline/stgcnpp_j/train/{}_{}'.format(
-                group, tag)
+            # work_dir must match the config filename (including prob/sampling/
+            # epoch suffixes) so variants never overwrite each other's
+            # checkpoints.
+            dir_name = os.path.splitext(fname)[0]
+            work_dir = './work_dirs/aug_baseline/stgcnpp_j/train/{}'.format(
+                dir_name)
             content = render_train_config(
                 group, degrade_type, args.prob, args.severity_sampling,
                 args.epochs, args.ann_file, work_dir)

@@ -1,0 +1,5 @@
+﻿group,matched_degradation,gain_on_matched,gain_on_others_mean,gain_on_clean,overfit_margin
+A1,joint_missing,57.33,7.39,-1.31,49.94
+A2,limb_occlusion,26.48,-1.96,0.53,28.44
+A3,coord_noise,54.23,9.08,-4.82,45.15
+A4,frame_missing,13.53,0.36,-3.78,13.18
