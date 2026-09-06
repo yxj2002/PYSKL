@@ -1,21 +1,22 @@
 #!/usr/bin/env python
 """Aggregate augmentation-baseline results from test.log files (stdlib only).
 
-Reads the per-condition ``test.log`` files under
-``work_dirs/aug_baseline/stgcnpp_j/results/{group}/{condition}/`` and emits the
-same archives as the numpy-based aggregator, but using only the Python standard
-library so it also runs on the dev host (no numpy / mmcv / torch):
+Reads per-condition ``test.log`` files under
+``work_dirs/aug_baseline/stgcnpp_j/results/{group}/{condition}/`` and emits:
 
-  * ``stage4_summary.csv`` -- 7 x 16 main table (Top-1 + mean-class-accuracy).
+  * ``stage4_summary.csv`` -- one row per (group, condition) with Top-1 and
+    mean-class-accuracy.
   * ``stage4_mra.csv``     -- per-group mRA (mean Top-1 over 16 conditions),
     clean accuracy and gap vs Clean.
   * ``stage4_overfit.csv`` -- single-degradation overfitting evidence for
     A1-A4 (gain vs A0 on matched vs other degradations vs clean).
   * ``stage4_report.json`` -- full machine-readable report.
 
-The values are read from the ``top1_acc`` / ``mean_class_accuracy`` lines that
-``tools/test.py`` prints at the end of each run (identical to recomputing from
-``result.pkl``).
+Groups default to every sub-directory under ``--results-root`` (so work-2/3
+variants like ``A6_mixed_p0.3`` are picked up automatically); ``--groups`` can
+restrict to a subset, accepting either A-group shorthand (A0..A6) or a full
+directory name.  Only the Python standard library is required, so it also runs
+on the dev host (no numpy / mmcv / torch).
 """
 import argparse
 import csv
@@ -23,24 +24,23 @@ import json
 import os
 import re
 
-GROUPS = ('A0', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6')
-GROUP_TAG = {
-    'A0': 'clean',
-    'A1': 'joint_missing',
-    'A2': 'limb_occlusion',
-    'A3': 'coord_noise',
-    'A4': 'frame_missing',
-    'A5': 'random_single',
-    'A6': 'mixed',
-}
-# Which single degradation each A1-A4 config trains on (for overfit analysis).
-GROUP_DEGRADE = {
-    'A0': None, 'A1': 'joint_missing', 'A2': 'limb_occlusion',
-    'A3': 'coord_noise', 'A4': 'frame_missing', 'A5': None, 'A6': None,
-}
 DEGRADE_TYPES = ('joint_missing', 'limb_occlusion', 'coord_noise',
                  'frame_missing', 'mixed')
 SEVERITIES = ('mild', 'moderate', 'severe')
+
+# A-group shorthand -> training degradation tag (used to expand A0..A6).
+GROUP_TAG = {
+    'A0': 'clean', 'A1': 'joint_missing', 'A2': 'limb_occlusion',
+    'A3': 'coord_noise', 'A4': 'frame_missing', 'A5': 'random_single',
+    'A6': 'mixed',
+}
+# Which single degradation each A1-A4 directory trains on (overfit analysis).
+GROUP_DEGRADE = {
+    'A1_joint_missing': 'joint_missing',
+    'A2_limb_occlusion': 'limb_occlusion',
+    'A3_coord_noise': 'coord_noise',
+    'A4_frame_missing': 'frame_missing',
+}
 
 
 def parse_args():
@@ -49,6 +49,10 @@ def parse_args():
         '--results-root', default='work_dirs/aug_baseline/stgcnpp_j/results')
     parser.add_argument(
         '--out-dir', default='research_notes/results/stage_04')
+    parser.add_argument(
+        '--groups', nargs='*', default=None,
+        help='Restrict to these groups (A-group shorthand or full directory '
+             'names). Default: scan all sub-directories under --results-root.')
     return parser.parse_args()
 
 
@@ -60,8 +64,24 @@ def condition_list():
     return conds
 
 
-def group_dir(group):
-    return '{}_{}'.format(group, GROUP_TAG[group])
+def discover_groups(results_root):
+    if not os.path.isdir(results_root):
+        return []
+    return sorted(
+        d for d in os.listdir(results_root)
+        if os.path.isdir(os.path.join(results_root, d)))
+
+
+def expand_groups(args):
+    if args.groups:
+        groups = []
+        for g in args.groups:
+            if g in GROUP_TAG:
+                groups.append('{}_{}'.format(g, GROUP_TAG[g]))
+            else:
+                groups.append(g)
+        return groups
+    return discover_groups(args.results_root)
 
 
 def _read_log(path):
@@ -70,7 +90,7 @@ def _read_log(path):
 
 
 def read_metrics(results_root, group, condition):
-    log = os.path.join(results_root, group_dir(group), condition, 'test.log')
+    log = os.path.join(results_root, group, condition, 'test.log')
     if not os.path.isfile(log):
         return None
     txt = _read_log(log)
@@ -82,16 +102,16 @@ def read_metrics(results_root, group, condition):
                 mca=float(mca[-1]) * 100.0 if mca else None)
 
 
-def collect(args):
+def collect(args, groups):
     detail = []
-    results = {g: {} for g in GROUPS}
+    results = {g: {} for g in groups}
     missing = []
-    for group in GROUPS:
+    for group in groups:
         for cond in condition_list():
             m = read_metrics(args.results_root, group, cond)
             if m is None:
                 missing.append(os.path.join(
-                    args.results_root, group_dir(group), cond, 'test.log'))
+                    args.results_root, group, cond, 'test.log'))
                 results[group][cond] = None
                 continue
             results[group][cond] = m
@@ -111,7 +131,7 @@ def tier_mean(results, group, degrade_type):
 
 def build_summary(results):
     rows = []
-    for group in GROUPS:
+    for group in results:
         for cond in condition_list():
             m = results[group][cond]
             rows.append(dict(
@@ -124,7 +144,7 @@ def build_summary(results):
 
 def build_mra(results):
     rows = []
-    for group in GROUPS:
+    for group in results:
         accs = [results[group][c]['top1'] for c in condition_list()
                 if results[group][c] is not None]
         mra = sum(accs) / len(accs) if accs else None
@@ -141,15 +161,20 @@ def build_mra(results):
 
 def build_overfit(results):
     rows = []
-    for group in ('A1', 'A2', 'A3', 'A4'):
+    base = 'A0_clean'
+    if base not in results:
+        return rows
+    for group in GROUP_DEGRADE:
+        if group not in results:
+            continue
         matched = GROUP_DEGRADE[group]
         others = [t for t in DEGRADE_TYPES if t != matched]
         matched_gain = (tier_mean(results, group, matched)
-                        - tier_mean(results, 'A0', matched))
+                        - tier_mean(results, base, matched))
         other_gain = sum(tier_mean(results, group, t)
-                         - tier_mean(results, 'A0', t) for t in others) / len(others)
+                         - tier_mean(results, base, t) for t in others) / len(others)
         clean_gain = (results[group]['clean']['top1']
-                      - results['A0']['clean']['top1'])
+                      - results[base]['clean']['top1'])
         rows.append(dict(
             group=group, matched_degradation=matched,
             gain_on_matched=round(matched_gain, 2),
@@ -171,7 +196,12 @@ def write_csv(path, rows):
 def main():
     args = parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
-    detail, results, missing = collect(args)
+    groups = expand_groups(args)
+    if not groups:
+        print('No group directories found under {}'.format(args.results_root))
+        return
+
+    detail, results, missing = collect(args, groups)
 
     summary = build_summary(results)
     mra = build_mra(results)
@@ -183,7 +213,7 @@ def main():
 
     report = dict(
         results_root=os.path.abspath(args.results_root),
-        groups=list(GROUPS),
+        groups=groups,
         num_conditions=len(condition_list()),
         summary=summary, mra=mra, overfit=overfit,
         missing=missing)
@@ -193,7 +223,7 @@ def main():
 
     print('=== mRA (mean over {} conditions) ==='.format(len(condition_list())))
     for row in sorted(mra, key=lambda r: -(r['mra'] or 0)):
-        print('  {:4s} mRA={:6} clean={:6} gap={}'.format(
+        print('  {:22s} mRA={:6} clean={:6} gap={}'.format(
             row['group'], row['mra'], row['clean'], row['gap_vs_clean']))
 
     if missing:

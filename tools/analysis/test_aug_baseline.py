@@ -42,9 +42,10 @@ WORK_ROOT = os.path.join('work_dirs', 'aug_baseline', 'stgcnpp_j')
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        '--groups', nargs='+', choices=list(A_GROUPS.keys()),
+        '--groups', nargs='+',
         default=list(A_GROUPS.keys()),
-        help='A groups to test. Default: all 7.')
+        help='A groups to test. Accepts A-group shorthand (A0..A6) or a full '
+             'train-directory name (e.g. A6_mixed_p0.3). Default: all 7.')
     parser.add_argument(
         '--dry-run', action='store_true',
         help='Validate files and print commands without running.')
@@ -55,7 +56,11 @@ def parse_args():
 
 
 def group_dir(group):
-    return '{}_{}'.format(group, A_GROUPS[group])
+    # Support A-group shorthand (A0 -> A0_clean) or a full train-directory
+    # name for variants (e.g. A6_mixed_p0.3, A6_mixed_s5).
+    if group in A_GROUPS:
+        return '{}_{}'.format(group, A_GROUPS[group])
+    return group
 
 
 def _train_workdir(group):
