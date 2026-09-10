@@ -1,0 +1,2 @@
+{"sequence":1,"timestamp":"2026-09-10T15:44:48.6565145+08:00","event_type":"state_change","task_id":"20260910-064156.395560800-opencode-go-deepseek-v4-pro--bash-3","session_id":"20260910-064156.395560800-opencode-go-deepseek-v4-pro","state":"running","runtime_state":"alive"}
+{"sequence":2,"timestamp":"2026-09-10T15:45:00.7565178+08:00","event_type":"state_change","task_id":"20260910-064156.395560800-opencode-go-deepseek-v4-pro--bash-3","session_id":"20260910-064156.395560800-opencode-go-deepseek-v4-pro","state":"succeeded","runtime_state":"exited"}

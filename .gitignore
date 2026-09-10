@@ -104,6 +104,7 @@ venv.bak/
 # Ignore research notes EXCEPT the results directory (lightweight CSVs/JSONs
 # that should be version-controlled).
 research_notes/*
+research_notes/results/figures/
 !research_notes/results/
 *.pkl
 *.pkl.json
