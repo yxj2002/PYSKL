@@ -1,5 +1,5 @@
 {
-  "results_root": "G:\\AllProjects\\pythonProjects\\pyskl-main\\pyskl-main\\work_dirs\\aug_baseline\\stgcnpp_j\\results",
+  "results_root": "D:\\YxjProject\\pythonProject\\pyskl\\work_dirs\\aug_baseline\\stgcnpp_j\\results",
   "groups": [
     "A0_clean",
     "A1_joint_missing",
@@ -9,7 +9,8 @@
     "A5_random_single",
     "A6_mixed",
     "A6_mixed_p0.3",
-    "A6_mixed_p0.6"
+    "A6_mixed_p0.6",
+    "A6_mixed_s5"
   ],
   "num_conditions": 16,
   "summary": [
@@ -876,6 +877,102 @@
       "condition": "mixed_severe",
       "top1": 69.97,
       "mean_class_accuracy": 69.98
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "clean",
+      "top1": 88.89,
+      "mean_class_accuracy": 88.9
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "joint_missing_mild",
+      "top1": 88.74,
+      "mean_class_accuracy": 88.75
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "limb_occlusion_mild",
+      "top1": 85.31,
+      "mean_class_accuracy": 85.32
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "coord_noise_mild",
+      "top1": 87.99,
+      "mean_class_accuracy": 88.0
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "frame_missing_mild",
+      "top1": 88.51,
+      "mean_class_accuracy": 88.51
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "mixed_mild",
+      "top1": 86.12,
+      "mean_class_accuracy": 86.14
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "joint_missing_moderate",
+      "top1": 88.1,
+      "mean_class_accuracy": 88.11
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "limb_occlusion_moderate",
+      "top1": 79.66,
+      "mean_class_accuracy": 79.68
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "coord_noise_moderate",
+      "top1": 85.48,
+      "mean_class_accuracy": 85.49
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "frame_missing_moderate",
+      "top1": 87.22,
+      "mean_class_accuracy": 87.23
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "mixed_moderate",
+      "top1": 80.52,
+      "mean_class_accuracy": 80.54
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "joint_missing_severe",
+      "top1": 87.5,
+      "mean_class_accuracy": 87.51
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "limb_occlusion_severe",
+      "top1": 69.95,
+      "mean_class_accuracy": 69.98
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "coord_noise_severe",
+      "top1": 80.71,
+      "mean_class_accuracy": 80.73
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "frame_missing_severe",
+      "top1": 84.64,
+      "mean_class_accuracy": 84.64
+    },
+    {
+      "group": "A6_mixed_s5",
+      "condition": "mixed_severe",
+      "top1": 70.4,
+      "mean_class_accuracy": 70.42
     }
   ],
   "mra": [
@@ -940,6 +1037,13 @@
       "mra": 84.45,
       "clean": 90.42,
       "gap_vs_clean": 5.97,
+      "n_conditions": 16
+    },
+    {
+      "group": "A6_mixed_s5",
+      "mra": 83.73,
+      "clean": 88.89,
+      "gap_vs_clean": 5.16,
       "n_conditions": 16
     }
   ],
