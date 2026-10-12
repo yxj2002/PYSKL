@@ -4,17 +4,20 @@
 B_aug (frozen from work 1-4):
     degrade_type=mixed, prob=0.3, severity_sampling='S3', 16 epochs.
 
-Work 5 trains 4 models on the FULL xsub_train and evaluates on xsub_val:
-    - ST-GCN++ B_aug x seeds {255, 2026, 3407}
-    - CTR-GCN  B_aug x seed 255
+Work 5 trains on the FULL xsub_train and evaluates on xsub_val:
+    - ST-GCN++ B_aug x seeds {255, 2026, 3407}   (main 3-seed report)
+    - CTR-GCN  B_aug x seeds {255, 2026, 3407}   (transfer to method carrier;
+      seed 255 validates the transfer, 2026/3407 back the main-table
+      mean±std required for the stage-5 C0 baseline)
 
 Configs follow the stage-2 clean-baseline protocol exactly (batch 32, lr 0.025,
 16 epoch CosineAnnealing, RepeatDataset x5, GenSkeFeat j) and only add
 ``RandomSkeletonDegrade`` into the train pipeline (before UniformSample).
+The training seed is passed via ``tools/train.py --seed`` (not in the config).
 
 Outputs:
     configs/aug_baseline/b_aug/stgcnpp_j/b_aug_seed{255,2026,3407}.py
-    configs/aug_baseline/b_aug/ctrgcn_j/b_aug_seed255.py
+    configs/aug_baseline/b_aug/ctrgcn_j/b_aug_seed{255,2026,3407}.py
 """
 import os
 
@@ -143,10 +146,12 @@ def main():
             './work_dirs/aug_baseline/b_aug/stgcnpp_j/seed{}'.format(seed),
             '# B_aug (mixed + prob=0.3 + S3 + 16 epoch), ST-GCN++ J, seed {}'.format(seed)))
 
-    write(os.path.join(out_root, 'ctrgcn_j', 'b_aug_seed255.py'), render(
-        CTRGCN_MODEL,
-        './work_dirs/aug_baseline/b_aug/ctrgcn_j/seed255',
-        '# B_aug (mixed + prob=0.3 + S3 + 16 epoch), CTR-GCN J, seed 255'))
+    for seed in (255, 2026, 3407):
+        fname = os.path.join(out_root, 'ctrgcn_j', 'b_aug_seed{}.py'.format(seed))
+        write(fname, render(
+            CTRGCN_MODEL,
+            './work_dirs/aug_baseline/b_aug/ctrgcn_j/seed{}'.format(seed),
+            '# B_aug (mixed + prob=0.3 + S3 + 16 epoch), CTR-GCN J, seed {}'.format(seed)))
 
 
 if __name__ == '__main__':
