@@ -1,0 +1,17 @@
+﻿model,condition,top1_mean,top1_std,top1_min,top1_max
+stgcnpp,clean,89.41,0.18,89.20,89.54
+stgcnpp,joint_missing_mild,88.79,0.17,88.68,88.99
+stgcnpp,limb_occlusion_mild,84.92,0.16,84.75,85.07
+stgcnpp,coord_noise_mild,87.20,0.08,87.14,87.29
+stgcnpp,frame_missing_mild,88.89,0.15,88.74,89.03
+stgcnpp,mixed_mild,85.13,0.19,84.92,85.29
+stgcnpp,joint_missing_moderate,87.82,0.25,87.64,88.11
+stgcnpp,limb_occlusion_moderate,78.21,0.06,78.14,78.24
+stgcnpp,coord_noise_moderate,84.49,0.15,84.33,84.62
+stgcnpp,frame_missing_moderate,87.19,0.09,87.10,87.28
+stgcnpp,mixed_moderate,78.13,0.40,77.78,78.56
+stgcnpp,joint_missing_severe,86.42,0.54,85.93,87.00
+stgcnpp,limb_occlusion_severe,68.14,0.33,67.77,68.40
+stgcnpp,coord_noise_severe,79.66,0.11,79.55,79.77
+stgcnpp,frame_missing_severe,84.05,0.08,84.00,84.14
+stgcnpp,mixed_severe,67.52,0.42,67.25,68.01

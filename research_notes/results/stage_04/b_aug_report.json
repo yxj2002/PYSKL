@@ -1,0 +1,156 @@
+{
+  "stgcnpp": {
+    "conditions": [
+      {
+        "condition": "clean",
+        "top1_mean": 89.41,
+        "top1_std": 0.18357559750685573,
+        "top1_min": 89.2,
+        "top1_max": 89.53999999999999,
+        "n_seeds": 3
+      },
+      {
+        "condition": "joint_missing_mild",
+        "top1_mean": 88.79333333333334,
+        "top1_std": 0.1709775813764333,
+        "top1_min": 88.68,
+        "top1_max": 88.99000000000001,
+        "n_seeds": 3
+      },
+      {
+        "condition": "limb_occlusion_mild",
+        "top1_mean": 84.91666666666667,
+        "top1_std": 0.16041612554021667,
+        "top1_min": 84.75,
+        "top1_max": 85.07000000000001,
+        "n_seeds": 3
+      },
+      {
+        "condition": "coord_noise_mild",
+        "top1_mean": 87.20333333333333,
+        "top1_std": 0.07767453465154252,
+        "top1_min": 87.14,
+        "top1_max": 87.29,
+        "n_seeds": 3
+      },
+      {
+        "condition": "frame_missing_mild",
+        "top1_mean": 88.88666666666667,
+        "top1_std": 0.14502873278538378,
+        "top1_min": 88.74,
+        "top1_max": 89.03,
+        "n_seeds": 3
+      },
+      {
+        "condition": "mixed_mild",
+        "top1_mean": 85.12666666666667,
+        "top1_std": 0.18876793513023274,
+        "top1_min": 84.92,
+        "top1_max": 85.28999999999999,
+        "n_seeds": 3
+      },
+      {
+        "condition": "joint_missing_moderate",
+        "top1_mean": 87.82,
+        "top1_std": 0.25357444666212015,
+        "top1_min": 87.64,
+        "top1_max": 88.11,
+        "n_seeds": 3
+      },
+      {
+        "condition": "limb_occlusion_moderate",
+        "top1_mean": 78.20666666666666,
+        "top1_std": 0.05773502691895929,
+        "top1_min": 78.14,
+        "top1_max": 78.24,
+        "n_seeds": 3
+      },
+      {
+        "condition": "coord_noise_moderate",
+        "top1_mean": 84.49333333333333,
+        "top1_std": 0.14843629385474574,
+        "top1_min": 84.33,
+        "top1_max": 84.61999999999999,
+        "n_seeds": 3
+      },
+      {
+        "condition": "frame_missing_moderate",
+        "top1_mean": 87.19333333333333,
+        "top1_std": 0.09018499505646148,
+        "top1_min": 87.1,
+        "top1_max": 87.28,
+        "n_seeds": 3
+      },
+      {
+        "condition": "mixed_moderate",
+        "top1_mean": 78.13333333333334,
+        "top1_std": 0.39513710700633237,
+        "top1_min": 77.78,
+        "top1_max": 78.56,
+        "n_seeds": 3
+      },
+      {
+        "condition": "joint_missing_severe",
+        "top1_mean": 86.41666666666666,
+        "top1_std": 0.5415102338214279,
+        "top1_min": 85.92999999999999,
+        "top1_max": 87.0,
+        "n_seeds": 3
+      },
+      {
+        "condition": "limb_occlusion_severe",
+        "top1_mean": 68.14333333333333,
+        "top1_std": 0.3308070938376879,
+        "top1_min": 67.77,
+        "top1_max": 68.4,
+        "n_seeds": 3
+      },
+      {
+        "condition": "coord_noise_severe",
+        "top1_mean": 79.66,
+        "top1_std": 0.10999999999999943,
+        "top1_min": 79.55,
+        "top1_max": 79.77,
+        "n_seeds": 3
+      },
+      {
+        "condition": "frame_missing_severe",
+        "top1_mean": 84.05333333333333,
+        "top1_std": 0.07571877794400485,
+        "top1_min": 84.0,
+        "top1_max": 84.14,
+        "n_seeds": 3
+      },
+      {
+        "condition": "mixed_severe",
+        "top1_mean": 67.52333333333334,
+        "top1_std": 0.42253205006642436,
+        "top1_min": 67.25,
+        "top1_max": 68.01,
+        "n_seeds": 3
+      }
+    ],
+    "mra_per_seed": [
+      {
+        "seed": 255,
+        "mra": 83.071875,
+        "clean": 89.53999999999999
+      },
+      {
+        "seed": 2026,
+        "mra": 82.74125,
+        "clean": 89.2
+      },
+      {
+        "seed": 3407,
+        "mra": 82.808125,
+        "clean": 89.49000000000001
+      }
+    ],
+    "mra_mean": 82.87375,
+    "mra_std": 0.17480904760624288,
+    "clean_mean": 89.41,
+    "clean_std": 0.18357559750685573,
+    "gap_pp": 6.5362499999999955
+  }
+}

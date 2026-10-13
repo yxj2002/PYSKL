@@ -1,0 +1,4 @@
+﻿model,metric,seed255,seed2026,seed3407,mean,std
+stgcnpp,mRA,83.07,82.74,82.81,82.87,0.17
+stgcnpp,clean,89.54,89.20,89.49,89.41,0.18
+stgcnpp,gap_pp,,,,6.54,
